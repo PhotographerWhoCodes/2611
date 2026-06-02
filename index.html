@@ -74,7 +74,7 @@ body {
 
 #stages-container { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
 
-.stage-block { margin-bottom: 2.5rem; }
+.stage-block { margin-bottom: 2.5rem; scroll-margin-top: 56px; }
 .stage-header { display: flex; align-items: center; gap: 1rem; padding: 0.7rem 1rem; background: #ede8df; border-left: 4px solid #7a5c1a; border-radius: 0 5px 5px 0; margin-bottom: 1.5rem; }
 .stage-num { font-family: "Cormorant Garamond", serif; font-size: 1.9rem; font-style: italic; color: #7a5c1a; line-height: 1; flex-shrink: 0; }
 .stage-title { font-size: 1.1rem; font-weight: 500; color: #1e1a15; }
@@ -129,7 +129,7 @@ body {
 
 <div class="footer">
   <div id="footer-title"></div>
-  <div class="footer-sub">Nov 16 – 30, 2026</div>
+  <div class="footer-sub">Nov 15 – 29, 2026</div>
 </div>
 
 <script>
@@ -138,13 +138,13 @@ const STAGES = [
     num: "I",
     title_en: "Arrival",
     title_zh: "落地缓冲",
-    dates: "Nov 16",
+    dates: "Nov 15",
     days: [
       {
-        date: "16",
+        date: "15",
         month_en: "Nov",
-        dow_en: "Monday",
-        dow_zh: "周一",
+        dow_en: "Sunday",
+        dow_zh: "周日",
         title_en: "Arrival Night",
         title_zh: "落地过夜",
         hotel_en: "Airport Hotel, Pudong",
@@ -170,13 +170,13 @@ const STAGES = [
     num: "II",
     title_en: "Ancient Capital Xi'an",
     title_zh: "千年古都西安",
-    dates: "Nov 17 – 19",
+    dates: "Nov 16 – 18",
     days: [
       {
-        date: "17",
+        date: "16",
         month_en: "Nov",
-        dow_en: "Tuesday",
-        dow_zh: "周二",
+        dow_en: "Monday",
+        dow_zh: "周一",
         title_en: "City Wall & Old Quarter",
         title_zh: "城墙骑行·洒金桥",
         hotel_en: "The Ritz-Carlton Xi'an",
@@ -197,10 +197,10 @@ const STAGES = [
         ]
       },
       {
-        date: "18",
+        date: "17",
         month_en: "Nov",
-        dow_en: "Wednesday",
-        dow_zh: "周三",
+        dow_en: "Tuesday",
+        dow_zh: "周二",
         title_en: "The Terracotta Army",
         title_zh: "世界第八大奇迹",
         hotel_en: "↑ The Ritz-Carlton Xi'an",
@@ -225,10 +225,10 @@ const STAGES = [
         ]
       },
       {
-        date: "19",
+        date: "18",
         month_en: "Nov",
-        dow_en: "Thursday",
-        dow_zh: "周四",
+        dow_en: "Wednesday",
+        dow_zh: "周三",
         title_en: "Shaanxi Museum & Tang Paradise",
         title_zh: "陕博珍宝·大唐不夜城",
         hotel_en: "↑ The Ritz-Carlton Xi'an",
@@ -258,13 +258,13 @@ const STAGES = [
     num: "III",
     title_en: "Ancient Anhui Villages",
     title_zh: "徽州底蕴",
-    dates: "Nov 20 – 22",
+    dates: "Nov 19 – 21",
     days: [
       {
-        date: "20",
+        date: "19",
         month_en: "Nov",
-        dow_en: "Friday",
-        dow_zh: "周五",
+        dow_en: "Thursday",
+        dow_zh: "周四",
         title_en: "Into the Villages · Chengkan",
         title_zh: "入徽州·呈坎古村",
         hotel_en: "Wenyutang or Shudetan Guesthouse, Chengkan",
@@ -287,10 +287,10 @@ const STAGES = [
         ]
       },
       {
-        date: "21",
+        date: "20",
         month_en: "Nov",
-        dow_en: "Saturday",
-        dow_zh: "周六",
+        dow_en: "Friday",
+        dow_zh: "周五",
         title_en: "Hongcun · Moon Pond",
         title_zh: "宏村·月沼倒影",
         hotel_en: "Lakeside boutique guesthouse, Hongcun",
@@ -313,10 +313,10 @@ const STAGES = [
         ]
       },
       {
-        date: "22",
+        date: "21",
         month_en: "Nov",
-        dow_en: "Sunday",
-        dow_zh: "周日",
+        dow_en: "Saturday",
+        dow_zh: "周六",
         title_en: "Bishan · Slow Day",
         title_zh: "碧山慢生活",
         hotel_en: "Pig's Inn, Bishan",
@@ -344,13 +344,13 @@ const STAGES = [
     num: "IV",
     title_en: "Heaven on Earth · Hangzhou",
     title_zh: "人间天堂·杭州",
-    dates: "Nov 23 – 25",
+    dates: "Nov 22 – 24",
     days: [
       {
-        date: "23",
+        date: "22",
         month_en: "Nov",
-        dow_en: "Monday",
-        dow_zh: "周一",
+        dow_en: "Sunday",
+        dow_zh: "周日",
         title_en: "Arrive Hangzhou",
         title_zh: "入杭州",
         hotel_en: "Manjuelong private villa (whole house)",
@@ -371,10 +371,10 @@ const STAGES = [
         ]
       },
       {
-        date: "24",
+        date: "23",
         month_en: "Nov",
-        dow_en: "Tuesday",
-        dow_zh: "周二",
+        dow_en: "Monday",
+        dow_zh: "周一",
         title_en: "West Lake · Lingyin Temple",
         title_zh: "泛舟西湖·灵隐寺",
         hotel_en: "↑ Manjuelong villa",
@@ -397,10 +397,10 @@ const STAGES = [
         ]
       },
       {
-        date: "25",
+        date: "24",
         month_en: "Nov",
-        dow_en: "Wednesday",
-        dow_zh: "周三",
+        dow_en: "Tuesday",
+        dow_zh: "周二",
         title_en: "Longjing Tea Plantation",
         title_zh: "龙井茶园",
         hotel_en: "↑ Manjuelong villa",
@@ -428,13 +428,13 @@ const STAGES = [
     num: "V",
     title_en: "Grand Finale · Shanghai",
     title_zh: "华丽谢幕·上海",
-    dates: "Nov 26 – 30",
+    dates: "Nov 25 – 29",
     days: [
       {
-        date: "26",
+        date: "25",
         month_en: "Nov",
-        dow_en: "Thursday",
-        dow_zh: "周四",
+        dow_en: "Wednesday",
+        dow_zh: "周三",
         title_en: "Return to Shanghai · The Bund",
         title_zh: "返沪·外滩夜景",
         hotel_en: "Hyatt Centric Zhongshan Park",
@@ -457,10 +457,10 @@ const STAGES = [
         ]
       },
       {
-        date: "27",
+        date: "26",
         month_en: "Nov",
-        dow_en: "Friday",
-        dow_zh: "周五",
+        dow_en: "Thursday",
+        dow_zh: "周四",
         title_en: "Yu Garden · Sihang Warehouse · Xintiandi",
         title_zh: "豫园·四行仓库·新天地",
         hotel_en: "↑ Hyatt Centric Zhongshan Park",
@@ -485,10 +485,10 @@ const STAGES = [
         ]
       },
       {
-        date: "28",
+        date: "27",
         month_en: "Nov",
-        dow_en: "Saturday",
-        dow_zh: "周六",
+        dow_en: "Friday",
+        dow_zh: "周五",
         title_en: "Suzhou Day Trip",
         title_zh: "苏州一日游",
         hotel_en: "↑ Hyatt Centric Zhongshan Park (luggage stays)",
@@ -511,10 +511,10 @@ const STAGES = [
         ]
       },
       {
-        date: "29",
+        date: "28",
         month_en: "Nov",
-        dow_en: "Sunday",
-        dow_zh: "周日",
+        dow_en: "Saturday",
+        dow_zh: "周六",
         title_en: "Zhangyuan · Farewell Dinner",
         title_zh: "张园·告别晚宴",
         hotel_en: "↑ Hyatt Centric Zhongshan Park",
@@ -539,10 +539,10 @@ const STAGES = [
         ]
       },
       {
-        date: "30",
+        date: "29",
         month_en: "Nov",
-        dow_en: "Monday",
-        dow_zh: "周一",
+        dow_en: "Sunday",
+        dow_zh: "周日",
         title_en: "Departure Day",
         title_zh: "返程日",
         hotel_en: "Check out · 12:00",
@@ -573,25 +573,25 @@ const T = {
   title: { zh: '我们的中国行', en: 'Our China Journey' },
   sub: { zh: '古老传统 · 现代科技 · 家人同行', en: 'Ancient traditions · Modern marvels · Together' },
   meta: {
-    zh: '<strong>Nov 16 – 30, 2026 · 11月16日—11月30日</strong><br>8大1小 · 西安 · 皖南 · 杭州 · 上海',
-    en: "<strong>Nov 16 – 30, 2026 · November 16–30</strong><br>8 adults + 1 child · Xi'an · Anhui · Hangzhou · Shanghai"
+    zh: '<strong>Nov 15 – 29, 2026 · 11月15日—11月29日</strong><br>8大1小 · 西安 · 皖南 · 杭州 · 上海',
+    en: "<strong>Nov 15 – 29, 2026 · November 15–29</strong><br>8 adults + 1 child · Xi'an · Anhui · Hangzhou · Shanghai"
   },
   routeLabel: { zh: '行程路线', en: 'The Route' },
   footer: { zh: '一路顺风，平安归来', en: 'Safe travels, wonderful memories' }
 };
 
 const ROUTE = [
-  { dot: '✈', hl: false, name: { zh: '上海落地', en: 'Land Shanghai' }, nights: { zh: '1晚', en: '1 night' } },
+  { dot: '✈', hl: false, name: { zh: '上海落地', en: 'Land Shanghai' }, nights: { zh: '1晚', en: '1 night' }, anchor: 'stage-I' },
   { conn: '✈' },
-  { dot: '秦', hl: true, name: { zh: "Xi'an 西安", en: "Xi'an" }, nights: { zh: '3晚', en: '3 nights' } },
+  { dot: '秦', hl: true, name: { zh: "Xi'an 西安", en: "Xi'an" }, nights: { zh: '3晚', en: '3 nights' }, anchor: 'stage-II' },
   { conn: '✈' },
-  { dot: '徽', hl: true, name: { zh: '皖南', en: 'Anhui' }, nights: { zh: '3晚', en: '3 nights' } },
+  { dot: '徽', hl: true, name: { zh: '皖南', en: 'Anhui' }, nights: { zh: '3晚', en: '3 nights' }, anchor: 'stage-III' },
   { conn: '🚄' },
-  { dot: '杭', hl: true, name: { zh: '杭州', en: 'Hangzhou' }, nights: { zh: '3晚', en: '3 nights' } },
+  { dot: '杭', hl: true, name: { zh: '杭州', en: 'Hangzhou' }, nights: { zh: '3晚', en: '3 nights' }, anchor: 'stage-IV' },
   { conn: '🚄' },
-  { dot: '沪', hl: true, name: { zh: '上海', en: 'Shanghai' }, nights: { zh: '4晚', en: '4 nights' } },
+  { dot: '沪', hl: true, name: { zh: '上海', en: 'Shanghai' }, nights: { zh: '4晚', en: '4 nights' }, anchor: 'stage-V' },
   { conn: '✈' },
-  { dot: '🏠', hl: false, name: { zh: 'DC 回家', en: 'DC Home' }, nights: { zh: '', en: '' } }
+  { dot: '🏠', hl: false, name: { zh: 'DC 回家', en: 'DC Home' }, nights: { zh: '', en: '' }, anchor: null }
 ];
 
 function t(key) { return T[key][lang]; }
@@ -610,9 +610,11 @@ function render() {
       return '<div class="route-conn"><div class="route-conn-line"></div><div class="route-conn-icon">' + r.conn + '</div></div>';
     }
     return '<div class="route-stop">' +
-      '<div class="route-dot' + (r.hl ? ' hl' : '') + '">' + r.dot + '</div>' +
-      '<div class="route-name">' + r.name[lang] + '</div>' +
+      (r.anchor ? '<a href="#' + r.anchor + '" style="text-decoration:none;display:contents">' : '') +
+      '<div class="route-dot' + (r.hl ? ' hl' : '') + '" style="' + (r.anchor ? 'cursor:pointer' : '') + '">' + r.dot + '</div>' +
+      '<div class="route-name" style="' + (r.anchor ? 'color:#7a5c1a' : '') + '">' + r.name[lang] + '</div>' +
       (r.nights[lang] ? '<div class="route-nights">' + r.nights[lang] + '</div>' : '') +
+      (r.anchor ? '</a>' : '') +
       '</div>';
   }).join('');
 
@@ -640,7 +642,7 @@ function render() {
       '</div>';
     }).join('');
 
-    return '<div class="stage-block">' +
+    return '<div class="stage-block" id="stage-' + stage.num + '">' +
       '<div class="stage-header">' +
         '<div class="stage-num">' + stage.num + '</div>' +
         '<div><div class="stage-title">' + (isEn ? stage.title_en : stage.title_zh) + '</div>' +
