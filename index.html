@@ -4,134 +4,146 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Family China Trip 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
+:root {
+  --cream: #faf7f2;
+  --cream-deep: #ede8df;
+  --ink: #1e1a15;
+  --ink-soft: #3d3830;
+  --ink-muted: #7a7268;
+  --gold: #7a5c1a;
+  --gold-pale: #f0e6c8;
+  --sage: #305840;
+  --sage-pale: #d8eadf;
+  --border: rgba(30,26,21,0.12);
+  --border-soft: rgba(30,26,21,0.07);
+}
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
+html { scroll-behavior: smooth; }
 body {
-  background: #faf7f2;
-  color: #1e1a15;
-  font-family: "Noto Sans SC", sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Noto Sans SC', sans-serif;
   font-size: 17px;
   line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
 }
-
 .lang-bar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: #faf7f2;
-  border-bottom: 2px solid rgba(30,26,21,0.15);
-  padding: 10px 1.5rem;
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
+  position: sticky; top: 0; z-index: 100;
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 2rem;
+  display: flex; justify-content: flex-end; gap: 6px;
 }
 .lang-btn {
-  padding: 7px 20px;
-  border-radius: 5px;
-  border: 2px solid rgba(30,26,21,0.25);
-  background: transparent;
-  color: #5a5248;
-  font-family: "Noto Sans SC", sans-serif;
-  font-size: 14px;
-  cursor: pointer;
+  padding: 6px 18px; border-radius: 4px;
+  border: 1.5px solid var(--border);
+  background: transparent; color: var(--ink-muted);
+  font-family: 'Noto Sans SC', sans-serif; font-size: 13px; cursor: pointer;
 }
-.lang-btn.active {
-  background: #1e1a15;
-  color: #faf7f2;
-  border-color: #1e1a15;
-}
-
+.lang-btn.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
 .cover {
-  text-align: center;
-  padding: 3.5rem 2rem 2.5rem;
-  max-width: 680px;
-  margin: 0 auto;
-  border-bottom: 1px solid rgba(30,26,21,0.12);
+  text-align: center; padding: 4rem 2rem 3rem;
+  max-width: 700px; margin: 0 auto;
+  border-bottom: 1px solid var(--border);
 }
-#cover-ornament { font-size: 13px; letter-spacing: 0.2em; color: #9a9088; margin-bottom: 1.2rem; }
-#cover-title { font-family: "Noto Serif SC", serif; font-size: clamp(1.7rem,5vw,2.6rem); font-weight: 600; line-height: 1.3; margin-bottom: 0.4rem; letter-spacing: 0.06em; }
-#cover-sub { font-family: "Cormorant Garamond", serif; font-size: clamp(1.2rem,3vw,1.6rem); font-style: italic; color: #5a5248; margin-bottom: 1.8rem; }
-.cover-divider { display: flex; align-items: center; gap: 1rem; margin: 0 auto 1.8rem; max-width: 240px; }
-.cdl { flex: 1; height: 1px; background: rgba(30,26,21,0.15); }
-.cdd { width: 5px; height: 5px; border-radius: 50%; background: #7a5c1a; flex-shrink: 0; }
-#cover-meta { font-size: 16px; color: #5a5248; line-height: 2; }
-#cover-meta strong { color: #1e1a15; }
-
-.route-section { max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem 2rem; }
-#route-label { text-align: center; font-size: 12px; letter-spacing: 0.2em; color: #9a9088; margin-bottom: 1.5rem; }
+#cover-ornament { font-size: 12px; letter-spacing: 0.22em; color: var(--ink-muted); margin-bottom: 1.4rem; }
+#cover-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 600;
+  line-height: 1.25; color: var(--ink); margin-bottom: 0.4rem; letter-spacing: 0.06em;
+}
+#cover-title-zh {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 3vw, 1.7rem); font-style: italic;
+  color: var(--ink-soft); margin-bottom: 2rem;
+}
+.cover-divider { display: flex; align-items: center; gap: 1rem; margin: 0 auto 2rem; max-width: 240px; }
+.cdl { flex: 1; height: 1px; background: var(--border); }
+.cdd { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+#cover-meta { font-size: 16px; color: var(--ink-soft); line-height: 2; }
+#cover-meta strong { color: var(--ink); font-weight: 500; }
+.route-section { max-width: 820px; margin: 0 auto; padding: 2rem 2rem 1.5rem; }
+#route-label { text-align: center; font-size: 11px; letter-spacing: 0.2em; color: var(--ink-muted); margin-bottom: 1.5rem; }
 .route-flow { display: flex; align-items: flex-start; justify-content: center; overflow-x: auto; scrollbar-width: none; }
 .route-flow::-webkit-scrollbar { display: none; }
-.route-stop { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; gap: 6px; }
-.route-dot { width: 42px; height: 42px; border-radius: 50%; border: 2px solid rgba(30,26,21,0.18); background: #faf7f2; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; font-family: "Noto Serif SC", serif; color: #5a5248; }
-.route-dot.hl { border-color: #7a5c1a; background: #f0e6c8; color: #7a5c1a; }
-.route-name { font-size: 13px; color: #5a5248; text-align: center; line-height: 1.4; }
-.route-nights { font-size: 12px; color: #9a9088; text-align: center; }
-.route-conn { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; padding-top: 18px; min-width: 26px; }
-.route-conn-line { width: 100%; height: 1px; background: rgba(30,26,21,0.15); }
-.route-conn-icon { font-size: 10px; color: #9a9088; margin-top: 3px; }
-
+.route-stop { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; gap: 7px; }
+.route-dot {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid var(--border); background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 500; font-family: 'Noto Serif SC', serif; color: var(--ink-soft);
+  transition: all 0.2s;
+}
+.route-dot.hl { border-color: var(--gold); background: var(--gold-pale); color: var(--gold); }
+a:hover .route-dot.hl { background: var(--gold); color: var(--cream); }
+.route-name { font-size: 12px; color: var(--ink-soft); text-align: center; line-height: 1.4; }
+a .route-name { color: var(--gold); }
+.route-nights { font-size: 11px; color: var(--ink-muted); text-align: center; }
+.route-conn { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; padding-top: 18px; min-width: 28px; }
+.route-conn-line { width: 100%; height: 1px; background: var(--border); }
+.route-conn-icon { font-size: 10px; color: var(--ink-muted); margin-top: 3px; }
 #stages-container { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
-
-.stage-block { margin-bottom: 2.5rem; scroll-margin-top: 56px; }
-.stage-header { display: flex; align-items: center; gap: 1rem; padding: 0.7rem 1rem; background: #ede8df; border-left: 4px solid #7a5c1a; border-radius: 0 5px 5px 0; margin-bottom: 1.5rem; }
-.stage-num { font-family: "Cormorant Garamond", serif; font-size: 1.9rem; font-style: italic; color: #7a5c1a; line-height: 1; flex-shrink: 0; }
-.stage-title { font-size: 1.1rem; font-weight: 500; color: #1e1a15; }
-.stage-dates { font-size: 13px; color: #9a9088; margin-top: 2px; }
-
-.day-entry { display: grid; grid-template-columns: 76px 1fr; gap: 0 1.5rem; padding: 1.4rem 0; border-bottom: 1px solid rgba(30,26,21,0.08); }
+.stage-block { margin-bottom: 2.5rem; scroll-margin-top: 52px; }
+.stage-header {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.7rem 1rem; background: var(--cream-deep);
+  border-left: 4px solid var(--gold); border-radius: 0 5px 5px 0; margin-bottom: 1.5rem;
+}
+.stage-num { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-style: italic; color: var(--gold); line-height: 1; flex-shrink: 0; }
+.stage-title { font-family: 'Noto Serif SC', serif; font-size: 1.1rem; font-weight: 400; color: var(--ink); letter-spacing: 0.06em; }
+.stage-title-zh { font-size: 0.85rem; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 1px; }
+.stage-dates { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
+.day-entry { display: grid; grid-template-columns: 72px 1fr; gap: 0 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border-soft); }
 .day-entry:last-child { border-bottom: none; }
 .day-left { text-align: right; padding-top: 2px; }
-.day-date-num { font-family: "Cormorant Garamond", serif; font-size: 2rem; font-style: italic; color: #1e1a15; line-height: 1; display: block; }
-.day-dow-txt { font-size: 11px; color: #9a9088; display: block; margin-top: 3px; }
-.day-title-txt { font-size: 1.1rem; font-weight: 500; color: #1e1a15; margin-bottom: 4px; font-family: "Noto Serif SC", serif; }
-.day-hotel-txt { display: inline-flex; align-items: center; gap: 5px; font-size: 14px; color: #5a5248; background: #ede8df; padding: 4px 11px; border-radius: 4px; margin-bottom: 10px; border: 1px solid rgba(30,26,21,0.12); }
+.day-date-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; color: var(--ink); line-height: 1; display: block; }
+.day-dow-txt { font-size: 11px; color: var(--ink-muted); display: block; margin-top: 3px; letter-spacing: 0.04em; }
+.day-title-txt { font-family: 'Noto Serif SC', serif; font-size: 1.1rem; font-weight: 400; color: var(--ink); margin-bottom: 2px; letter-spacing: 0.04em; }
+.day-title-zh { font-size: 0.82rem; color: var(--ink-muted); letter-spacing: 0.06em; margin-bottom: 10px; }
+.day-hotel-txt { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: var(--ink-soft); background: var(--cream-deep); padding: 4px 11px; border-radius: 3px; margin-bottom: 10px; border: 1px solid var(--border); }
 .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
-.pill-t { font-size: 13px; padding: 4px 11px; border-radius: 4px; border: 1.5px solid rgba(48,88,64,0.4); color: #305840; background: #d8eadf; line-height: 1.4; }
-.pill-f { font-size: 13px; padding: 4px 11px; border-radius: 4px; border: 1.5px solid rgba(122,92,26,0.4); color: #7a5c1a; background: #f0e6c8; line-height: 1.4; }
-.acts { font-size: 15px; color: #3d3830; line-height: 1.9; }
+.pill-t { font-size: 12px; padding: 3px 10px; border-radius: 3px; border: 1px solid rgba(48,88,64,0.3); color: var(--sage); background: var(--sage-pale); line-height: 1.4; }
+.pill-f { font-size: 12px; padding: 3px 10px; border-radius: 3px; border: 1px solid rgba(122,92,26,0.3); color: var(--gold); background: var(--gold-pale); line-height: 1.4; }
+.acts { font-size: 15px; color: var(--ink-soft); line-height: 1.9; }
 .act-row { display: flex; align-items: baseline; gap: 9px; margin-bottom: 1px; }
-.act-dot { width: 5px; height: 5px; border-radius: 50%; background: #7a5c1a; flex-shrink: 0; margin-top: 9px; }
-
-.footer { text-align: center; padding: 2.5rem 2rem 3.5rem; border-top: 2px solid rgba(30,26,21,0.15); max-width: 780px; margin: 0 auto; }
-#footer-title { font-family: "Noto Serif SC", serif; font-size: 1.3rem; color: #5a5248; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
-.footer-sub { font-size: 14px; color: #9a9088; }
-
+.act-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 10px; }
+.footer { text-align: center; padding: 2.5rem 2rem 3.5rem; border-top: 1px solid var(--border); max-width: 780px; margin: 0 auto; }
+#footer-title { font-family: 'Noto Serif SC', serif; font-size: 1.2rem; font-weight: 400; color: var(--ink-soft); letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+.footer-sub { font-size: 13px; color: var(--ink-muted); }
+a { text-decoration: none; }
 @media (max-width: 560px) {
-  .day-entry { grid-template-columns: 60px 1fr; gap: 0 1rem; }
-  .day-date-num { font-size: 1.6rem; }
+  .cover { padding: 2.5rem 1.25rem 2rem; }
+  .day-entry { grid-template-columns: 58px 1fr; gap: 0 1rem; }
+  .day-date-num { font-size: 1.7rem; }
   #stages-container { padding: 0 1rem 3rem; }
+  .route-section { padding: 1.5rem 1rem; }
+  .lang-bar { padding: 10px 1rem; }
 }
 </style>
 </head>
 <body>
-
 <div class="lang-bar">
   <button class="lang-btn active" onclick="setLang('zh')">中文</button>
   <button class="lang-btn" onclick="setLang('en')">English</button>
 </div>
-
 <div class="cover">
   <div id="cover-ornament"></div>
   <div id="cover-title"></div>
-  <div id="cover-sub"></div>
+  <div id="cover-title-zh"></div>
   <div class="cover-divider"><div class="cdl"></div><div class="cdd"></div><div class="cdl"></div></div>
   <div id="cover-meta"></div>
 </div>
-
 <div class="route-section">
   <div id="route-label"></div>
   <div class="route-flow" id="route-flow"></div>
 </div>
-
 <div id="stages-container"></div>
-
 <div class="footer">
   <div id="footer-title"></div>
   <div class="footer-sub">Nov 15 – 29, 2026</div>
 </div>
-
 <script>
 const STAGES = [
   {
@@ -147,21 +159,21 @@ const STAGES = [
         dow_zh: "周日",
         title_en: "Arrival Night",
         title_zh: "落地过夜",
-        hotel_en: "Airport Hotel, Pudong",
-        hotel_zh: "浦东机场附近酒店",
-        transport_en: ["Taxi · PVG T2 → hotel (5 min)"],
-        transport_zh: ["打车 浦东T2 → 机场酒店（5分钟）"],
+        hotel_en: "Atour Hotel Shanghai Pudong Airport · Booked",
+        hotel_zh: "上海浦东遨途机场酒店 · 已订",
+        transport_en: ["Walk inside Terminal 2 · arrivals → Aerotel (about 3 min; no car needed)"],
+        transport_zh: ["T2航站楼内步行 · 到达层 → 遨途酒店（约3分钟，无需用车）"],
         food_en: [],
         food_zh: [],
         activities_en: [
           "Land at 4:30pm · clear customs · check in",
           "Early dinner and rest — big day tomorrow",
-          "Luggage shipped ahead to Xi'an via SF Express"
+          "Luggage checked through to Xi'an or shipped via SF Express next day"
         ],
         activities_zh: [
           "16:30落地 · 出关 · 入住酒店",
           "早早吃饭休息 — 明天飞西安",
-          "行李顺丰寄西安，轻装上路"
+          "行李可直接托运至西安，或次日顺丰速运寄送"
         ]
       }
     ]
@@ -178,20 +190,20 @@ const STAGES = [
         dow_en: "Monday",
         dow_zh: "周一",
         title_en: "City Wall & Old Quarter",
-        title_zh: "城墙骑行·洒金桥",
-        hotel_en: "The Ritz-Carlton Xi'an",
-        hotel_zh: "西安丽思卡尔顿",
-        transport_en: ["Flight · Shanghai → Xi'an (~2 hrs)", "Private car with English-speaking guide"],
-        transport_zh: ["✈ 上海 → 西安（约2小时）", "英语包车导游全程接待"],
+        title_zh: "城墙漫步·洒金桥",
+        hotel_en: "The Ritz-Carlton Xi'an · Booked",
+        hotel_zh: "西安丽思卡尔顿 · 已订",
+        transport_en: ["Flight · Shanghai Pudong Airport → Xi'an (~2 hrs)", "Private car · Xi'an Airport pickup → hotel"],
+        transport_zh: ["✈ 上海浦东机场 → 西安（约2小时）", "商务车接机 · 西安机场 → 酒店"],
         food_en: ["Dinner · Sajin Bridge — the local Muslim quarter locals actually go to"],
         food_zh: ["晚餐 · 洒金桥 — 本地人去的真正回民街"],
         activities_en: [
-          "Ancient City Wall — rent bikes and cycle along the top at sunset",
+          "Ancient City Wall — stroll along the top at sunset, watch the city lights come on",
           "Bell Tower illuminated at night — best viewed from the plaza",
           "Rou jia mo (Chinese burger), lamb soup, steamed dumplings for dinner"
         ],
         activities_zh: [
-          "西安城墙 — 骑自行车沿城墙顶环行，傍晚日落最美",
+          "西安城墙 — 傍晚城墙上漫步，看夕阳与城市灯光交替",
           "钟楼夜景 — 在广场外欣赏灯光（无需进入）",
           "肉夹馍、羊肉泡馍、贾三灌汤包晚餐"
         ]
@@ -201,27 +213,31 @@ const STAGES = [
         month_en: "Nov",
         dow_en: "Tuesday",
         dow_zh: "周二",
-        title_en: "The Terracotta Army",
-        title_zh: "世界第八大奇迹",
-        hotel_en: "↑ The Ritz-Carlton Xi'an",
-        hotel_zh: "↑ 西安丽思卡尔顿",
-        transport_en: ["Private car with English-speaking guide (full day)"],
-        transport_zh: ["英语包车导游全天"],
-        food_en: ["Breakfast included at hotel", "Local snacks near the archaeological site"],
-        food_zh: ["酒店含早餐", "景区附近临潼风味小吃"],
+        title_en: "Terracotta Army + MOMOPARK Split Day",
+        title_zh: "兵马俑 · MOMOPARK 分组日",
+        hotel_en: "The Ritz-Carlton Xi'an · Booked",
+        hotel_zh: "西安丽思卡尔顿 · 已订",
+        transport_en: ["Private car on standby all day", "History group · Terracotta Army guide arranged separately for the site", "Relaxed group · Metro Line 3 to MOMOPARK", "Private car · MOMOPARK → hotel after dinner"],
+        transport_zh: ["商务车全天跟车", "历史组 · 兵马俑景点另配导游/讲解", "休闲组 · 地铁3号线去MOMOPARK", "晚餐后商务车 · MOMOPARK → 酒店"],
+        food_en: ["Breakfast included at hotel", "Separate lunch", "Family dinner together at MOMOPARK"],
+        food_zh: ["酒店含早餐", "两组各自午餐", "傍晚在MOMOPARK全家汇合并一起吃晚餐"],
         activities_en: [
-          "Terracotta Army — full morning at the site, weekday = far fewer crowds",
-          "8,000 life-size warriors buried with China's first emperor in 210 BC",
-          "Pit No. 1 (the great hall), Pit No. 2, Bronze Chariot Museum",
-          "Official guided tour strongly recommended — without a guide it's just clay figures",
-          "Huaqing Palace hot springs (optional afternoon) — Tang Dynasty imperial retreat"
+          "History group: Terracotta Army — full morning at the site, with a dedicated guide/lecturer for this attraction",
+          "History group: Pit No. 1, Pit No. 2, Bronze Chariot Museum; Huaqing Palace optional only if everyone still has energy",
+          "Relaxed group: slow hotel morning; optional children’s haircut near the hotel, then lunch and nap/rest",
+          "Afternoon: take Metro Line 3 to MOMOPARK for an easy indoor outing, children's play and shopping",
+          "Late afternoon: the Terracotta Army group comes to MOMOPARK; family dinner together",
+          "After dinner: one private car returns everyone to The Ritz-Carlton Xi'an",
+          "No need to visit Big Wild Goose Pagoda or Tang Paradise tonight"
         ],
         activities_zh: [
-          "兵马俑 — 工作日人少，全上午从容参观",
-          "8000个真人大小的陶俑，陪葬秦始皇，公元前210年",
-          "一号坑（最震撼）· 二号坑 · 铜车马馆",
-          "强烈推荐配讲解 — 没有讲解，只是看泥人",
-          "华清宫（可选下午）— 唐玄宗与杨贵妃的温泉行宫"
+          "历史组：兵马俑全天/半天重点参观，配讲解；工作日相对从容",
+          "历史组：一号坑、二号坑、铜车马馆；华清宫仅在大家体力充足时可选",
+          "休闲组：上午酒店慢慢来；儿童理发（可选），然后午饭、午睡/休息",
+          "下午：坐地铁3号线去MOMOPARK，室内玩耍、儿童活动、逛商场，节奏轻松",
+          "傍晚：历史组直接到MOMOPARK，大家汇合后一起吃晚餐",
+          "晚餐后：商务车接全家一起回西安丽思卡尔顿",
+          "今晚不安排大雁塔或大唐不夜城，给全家留出恢复体力的晚上"
         ]
       },
       {
@@ -229,35 +245,35 @@ const STAGES = [
         month_en: "Nov",
         dow_en: "Wednesday",
         dow_zh: "周三",
-        title_en: "Shaanxi Museum & Tang Paradise",
-        title_zh: "陕博珍宝·大唐不夜城",
-        hotel_en: "↑ The Ritz-Carlton Xi'an",
-        hotel_zh: "↑ 西安丽思卡尔顿",
-        transport_en: ["Private car with English-speaking guide (full day)"],
-        transport_zh: ["英语包车导游全天"],
-        food_en: ["Breakfast included at hotel"],
-        food_zh: ["酒店含早餐"],
+        title_en: "Shaanxi Museum + Big Wild Goose Pagoda + Tang Paradise",
+        title_zh: "陕博珍宝 · 大雁塔 · 大唐不夜城",
+        hotel_en: "The Ritz-Carlton Xi'an · Booked",
+        hotel_zh: "西安丽思卡尔顿 · 已订",
+        transport_en: ["Private car on standby all day", "History group · Shaanxi History Museum guide arranged separately", "Relaxed group · hotel / nearby easy outing", "Private car for family transfers and evening return"],
+        transport_zh: ["商务车全天跟车", "历史组 · 陕西历史博物馆另配导游/讲解", "休闲组 · 酒店/附近轻松活动", "商务车负责汇合及晚间送回酒店"],
+        food_en: ["Breakfast included at hotel", "Lunch near each group's activity", "Early family dinner before the evening walk"],
+        food_zh: ["酒店含早餐", "各组就近午餐", "晚上游览前全家早点吃晚餐"],
         activities_en: [
-          "Shaanxi History Museum — one of China's finest, Tang Dynasty gold and silver treasures",
-          "The Treasure Hall is unmissable — 2,000-year-old artifacts in extraordinary condition",
-          "Big Wild Goose Pagoda — beautiful plaza, no need to climb",
-          "Tang Paradise after dark — free, opens fully at 7pm",
-          "Light shows, Tang-dynasty costumed performers, and a dancing fountain the kids will love"
+          "History group: Shaanxi History Museum — separate museum guide/lecturer; focus on the Treasure Hall and Tang Dynasty highlights",
+          "Relaxed group: slow morning, hotel rest or a very light nearby outing; no museum required",
+          "Late afternoon: everyone reunites around Big Wild Goose Pagoda; plaza stroll only, no climbing",
+          "Evening: Tang Paradise / Tang-style night atmosphere and performances; keep the walking portion flexible for the child and pregnant traveler",
+          "This is the only planned Tang Paradise / Big Wild Goose Pagoda evening — no repeat on Nov 17"
         ],
         activities_zh: [
-          "陕西历史博物馆 — 中国最好的历史博物馆之一，唐代金银器举世无双",
-          "珍宝馆必看 — 何家村窖藏，2000年前的文物保存完美",
-          "大雁塔广场散步（不登塔，广场本身气势磅礴）",
-          "大唐不夜城夜游 — 免费，19:00灯光全开",
-          "光影秀、唐风演员、音乐喷泉，孩子会疯狂喜欢"
+          "历史组：陕西历史博物馆，重点看珍宝馆和唐代精品",
+          "休闲组：上午慢节奏，酒店休息或附近非常轻松的活动，不需要去博物馆",
+          "傍晚：全家在大雁塔区域汇合；只逛广场，不登塔",
+          "晚上：大唐不夜城/唐风夜景与演出，孕妇和小孩按体力决定走多远，随时可以坐下或提前回去",
+          "大雁塔 + 大唐不夜城只安排这一晚，11月17日不重复"
         ]
       }
     ]
   },
   {
     num: "III",
-    title_en: "Ancient Anhui Villages",
-    title_zh: "徽州底蕴",
+    title_en: "Heaven on Earth · Hangzhou",
+    title_zh: "人间天堂·杭州",
     dates: "Nov 19 – 21",
     days: [
       {
@@ -265,25 +281,25 @@ const STAGES = [
         month_en: "Nov",
         dow_en: "Thursday",
         dow_zh: "周四",
-        title_en: "Into the Villages · Chengkan",
-        title_zh: "入徽州·呈坎古村",
-        hotel_en: "Wenyutang or Shudetan Guesthouse, Chengkan",
-        hotel_zh: "呈坎文郁堂或澍德堂民宿",
-        transport_en: ["Flight · Xi'an → Huangshan Tunxi Airport (~1.5 hrs)", "Rental car from airport → Chengkan (~1 hr)"],
-        transport_zh: ["✈ 西安 → 黄山屯溪机场（约1.5小时）", "当地租车 机场 → 呈坎（约1小时）"],
-        food_en: ["Breakfast included at hotel", "Village farmhouse dinner"],
-        food_zh: ["酒店含早餐", "村内农家菜晚餐"],
+        title_en: "Arrive Hangzhou",
+        title_zh: "入杭州",
+        hotel_en: "Jinxi Shanzhuang Hangzhou · Booked",
+        hotel_zh: "杭州金溪山庄 · 已订",
+        transport_en: ["Private car · hotel → Xi'an Airport", "Flight · Xi'an → Hangzhou (~2 hrs)", "Hangzhou Airport → Jinxi: pre-booked MPV with child seat (or install the seat brought by Dad)"],
+        transport_zh: ["商务车送机 · 酒店 → 西安机场", "✈ 西安 → 杭州（约2小时）", "杭州机场 → 金溪山庄：提前预约商务车（车队提供儿童座椅；或使用爸爸带来的安全座椅）"],
+        food_en: ["Dinner near the hotel — or walk to Quyuan Garden waterside"],
+        food_zh: ["酒店附近晚餐，或步行至曲院风荷湖边"],
         activities_en: [
-          "Meet up with family at Tunxi airport",
-          "Chengkan village — Song and Ming dynasty architecture, 800 years old",
-          "Entirely flat, gentle pace — perfect after three days of sightseeing",
-          "Fish lantern show if available in November (ask locally)"
+          "Check in and settle in — the hotel is on Yanggong Causeway, opposite Quyuan Garden",
+          "Stroll across the road to Quyuan Garden and West Lake shore at dusk — 5 minutes on foot",
+          "Optional: Impression West Lake night show (~15 min walk from hotel)",
+          "Public-transit backup from Hangzhou Airport: Metro Line 7 to Wushan Square, then bus toward Quyuan Fenghe/Yuefen area — workable, but not ideal with luggage, seniors and a child"
         ],
         activities_zh: [
-          "屯溪机场家人相聚",
-          "呈坎古村 — 宋明建筑，八卦村格局，800年历史",
-          "全程平地，节奏舒缓 — 西安三天密集游览后的完美缓冲",
-          "如有鱼灯表演可观看（视11月当地活动）"
+          "入住安顿 — 酒店位于杨公堤，对面就是曲院风荷",
+          "傍晚步行过马路至曲院风荷湖边散步——步行5分钟",
+          "（可选）印象西湖夜间实景演出（步行约15分钟）",
+          "机场公共交通备选：地铁7号线至吴山广场，再转公交前往曲院风荷/岳坟一带；带行李、老人和孩子时不作为首选"
         ]
       },
       {
@@ -291,94 +307,10 @@ const STAGES = [
         month_en: "Nov",
         dow_en: "Friday",
         dow_zh: "周五",
-        title_en: "Hongcun · Moon Pond",
-        title_zh: "宏村·月沼倒影",
-        hotel_en: "Lakeside boutique guesthouse, Hongcun",
-        hotel_zh: "宏村湖边精品民宿",
-        transport_en: ["Rental car · Chengkan → Hongcun (~40 min)"],
-        transport_zh: ["当地租车 呈坎 → 宏村（约40分钟）"],
-        food_en: ["Huizhou cuisine dinner in the village"],
-        food_zh: ["村内徽州菜晚餐"],
-        activities_en: [
-          "Early morning at Moon Pond — mirror-perfect reflections, best light before 8am",
-          "South Lake Academy — 400-year-old school by the water",
-          "Chengzhi Hall — stunning carved wood mansion, finest in all of Anhui",
-          "Hongcun feels like walking into a traditional ink painting"
-        ],
-        activities_zh: [
-          "清晨月沼 — 如镜倒影，8点前光线最美，是整个皖南最美的一幕",
-          "南湖书院 — 400年历史，湖边古朴书院",
-          "承志堂 — 木雕精美绝伦，皖南民居之最",
-          "宏村就像走进了一幅水墨画里"
-        ]
-      },
-      {
-        date: "21",
-        month_en: "Nov",
-        dow_en: "Saturday",
-        dow_zh: "周六",
-        title_en: "Bishan · Slow Day",
-        title_zh: "碧山慢生活",
-        hotel_en: "Pig's Inn, Bishan",
-        hotel_zh: "碧山猪栏酒吧乡村客栈",
-        transport_en: ["Rental car · Hongcun → Bishan (~20 min)"],
-        transport_zh: ["当地租车 宏村 → 碧山（约20分钟）"],
-        food_en: ["Dinner at the inn"],
-        food_zh: ["猪栏酒吧民宿餐厅晚餐"],
-        activities_en: [
-          "Lucun village (optional) — the most elaborate wood-carved towers in Anhui",
-          "Pig's Inn — a converted pigsty turned into one of China's most-loved boutique inns",
-          "Bishan Bookstore — an independent bookshop in a restored village hall, utterly charming",
-          "Evening: tea in the courtyard, stars, cold crisp air, total quiet"
-        ],
-        activities_zh: [
-          "卢村（可选）— 皖南最精美的木雕楼群",
-          "猪栏酒吧 — 猪圈改造的精品民宿，全中国最有故事的乡村酒店之一",
-          "碧山书局 — 乡村里的独立书店，旧祠堂改造，安静迷人",
-          "傍晚：院子里喝茶，看星星，听虫鸣，彻底放空"
-        ]
-      }
-    ]
-  },
-  {
-    num: "IV",
-    title_en: "Heaven on Earth · Hangzhou",
-    title_zh: "人间天堂·杭州",
-    dates: "Nov 22 – 24",
-    days: [
-      {
-        date: "22",
-        month_en: "Nov",
-        dow_en: "Sunday",
-        dow_zh: "周日",
-        title_en: "Arrive Hangzhou",
-        title_zh: "入杭州",
-        hotel_en: "Jinxi Hotel Hangzhou",
-        hotel_zh: "杭州金溪山庄",
-        transport_en: ["High-speed train · Huangshan North → Hangzhou (~1.5 hrs)", "Taxi to hotel"],
-        transport_zh: ["🚄 高铁 黄山北 → 杭州（约1.5小时）", "打车至酒店"],
-        food_en: ["Dinner near the hotel — or walk to Quyuan Garden waterside"],
-        food_zh: ["酒店附近晚餐，或步行至曲院风荷湖边"],
-        activities_en: [
-          "Check in and settle in — the hotel is on Yanggong Causeway, opposite Quyuan Garden",
-          "Stroll across the road to Quyuan Garden and West Lake shore at dusk — 5 minutes on foot",
-          "Optional: Impression West Lake night show (~15 min walk from hotel, China's most famous outdoor performance)"
-        ],
-        activities_zh: [
-          "入住安顿 — 酒店位于杨公堤，对面就是曲院风荷",
-          "傍晚步行过马路至曲院风荷湖边散步——步行5分钟",
-          "可选：印象西湖夜间实景演出（步行约15分钟，中国最著名的户外实景表演）"
-        ]
-      },
-      {
-        date: "23",
-        month_en: "Nov",
-        dow_en: "Monday",
-        dow_zh: "周一",
         title_en: "West Lake · Lingyin Temple",
         title_zh: "泛舟西湖·灵隐寺",
-        hotel_en: "↑ Jinxi Hotel Hangzhou",
-        hotel_zh: "↑ 杭州金溪山庄",
+        hotel_en: "Jinxi Shanzhuang Hangzhou · Booked",
+        hotel_zh: "杭州金溪山庄 · 已订",
         transport_en: ["Walk to Quyuan Garden pier (~5 min) for rowing boat", "Bus 7 or 103 to Lingyin Temple (~20 min, stop right outside hotel)"],
         transport_zh: ["步行至曲院风荷码头（约5分钟）包摇橹船", "酒店门口乘7路或103路公交至灵隐（约20分钟）"],
         food_en: ["Lunch · Grandma's Kitchen — classic Hangzhou cuisine"],
@@ -386,42 +318,76 @@ const STAGES = [
         activities_en: [
           "Walk out of hotel, cross the road, board a private rowing boat at Quyuan Garden pier — no car needed",
           "60–90 min on West Lake: Su Causeway, Broken Bridge, Three Pools Mirroring the Moon",
-          "郭庄 Guozhuang Garden — rated the finest classical garden on West Lake, free entry, steps from hotel (worth 30 min)",
-          "Lingyin Temple — one of China's most important Buddhist temples",
-          "Feilai Peak stone carvings — hundreds of Buddhist figures carved into cliff faces"
+          "郭庄 Guozhuang Garden — rated the finest classical garden on West Lake, free entry, steps from hotel",
+          "Lingyin Temple + Feilai Peak Buddhist cliff carvings"
         ],
         activities_zh: [
           "步行出酒店，过马路，在曲院风荷码头包摇橹船——无需包车",
           "游西湖60-90分钟：苏堤、断桥、三潭印月",
-          "郭庄 — 西湖古典园林之冠，免费，就在酒店旁（值得停留30分钟）",
-          "灵隐寺 — 中国最重要的佛教寺院之一",
-          "飞来峰石窟 — 悬崖上数百尊佛像造像，令人叹为观止"
+          "郭庄 — 西湖古典园林之冠，免费，就在酒店旁",
+          "灵隐寺 + 飞来峰石窟造像"
         ]
       },
       {
-        date: "24",
+        date: "21",
         month_en: "Nov",
-        dow_en: "Tuesday",
-        dow_zh: "周二",
-        title_en: "Longjing Tea Plantation",
-        title_zh: "龙井茶园",
-        hotel_en: "↑ Jinxi Hotel Hangzhou",
-        hotel_zh: "↑ 杭州金溪山庄",
-        transport_en: ["Private car with child seat — only day needing a car (Longjing ~20 min from hotel)"],
-        transport_zh: ["包车（含儿童安全座椅）— 杭州唯一需要包车的一天（龙井约20分钟）"],
+        dow_en: "Saturday",
+        dow_zh: "周六",
+        title_en: "Longjing Tea Country · Slow Tea Day",
+        title_zh: "龙井茶乡 · 喝茶慢游",
+        hotel_en: "Jinxi Shanzhuang Hangzhou · Booked",
+        hotel_zh: "杭州金溪山庄 · 已订",
+        transport_en: ["Half-day private car (5–6 hrs) with child seat — Longjing tea-country outing (~20 min from hotel)"],
+        transport_zh: ["半日包车5–6小时（含儿童安全座椅）— 龙井茶乡慢游（距酒店约20分钟）"],
         food_en: ["Lunch · Tea farm table — bamboo shoot duck, West Lake vinegar fish"],
         food_zh: ["午餐 · 茶园农家菜 — 笋干老鸭煲、西湖醋鱼"],
         activities_en: [
-          "Longjing village or Meijiawu — walk through the tea terraces",
-          "Taste carefully stored Lion Peak Dragon Well tea brewed by a farmer — the spring harvest, aged to perfection",
-          "Buy tea leaves to bring home — far better value than any shop",
+          "Longjing village or Meijiawu — a gentle walk through the tea-country landscape; November is not tea-picking season",
+          "Sit down at a comfortable tea house or farmer’s home to taste spring-harvest Longjing tea",
+          "Buy tea only if you find one you genuinely like — no need to treat shopping as a goal",
           "Afternoon back at the hotel — rest and soak it all in"
         ],
         activities_zh: [
-          "龙井村或梅家坞 — 在茶园山间漫步",
-          "在茶农家品今年春季的狮峰龙井——非采茶季，反而人少清静，价格更实",
-          "现场买茶叶带回家 — 比任何商店都便宜实惠",
+          "龙井村或梅家坞 — 茶乡轻松慢游；11月不是采茶季，不安排采茶体验",
+          "找一家环境舒服、方便老人和孩子休息的茶馆或茶农家，坐下来喝当年春茶",
+          "喜欢再买茶，不把买茶当任务",
           "下午回酒店休息，慢慢回味这一路"
+        ]
+      }
+    ]
+  },
+  {
+    num: "IV",
+    title_en: "Ancient Anhui Villages",
+    title_zh: "徽州底蕴",
+    dates: "Nov 22 – 24",
+    days: [
+      {
+        date: "22–24",
+        month_en: "Nov",
+        dow_en: "Sun–Tue",
+        dow_zh: "周日—周二",
+        title_en: "Chengkan · Hongcun · Villages",
+        title_zh: "呈坎·宏村·皖南古村",
+        hotel_en: "Shudetan Guesthouse, Chengkan (1 night) · Hongcun lakeside guesthouse (2 nights)",
+        hotel_zh: "呈坎澍德堂（1晚）· 宏村湖边精品民宿（2晚）",
+        transport_en: ["Pre-booked MPV · Jinxi Shanzhuang → Hangzhou East Railway Station (child seat)", "High-speed train · Hangzhou East → Huangshan North (~1.5 hrs, Nov 22)", "Anhui tour operator takes over on arrival: 15-seat vehicle throughout (child seat incl.)", "Tour operator drops off at Huangshan North Station, Nov 25 morning"],
+        transport_zh: ["预约商务车 · 金溪山庄 → 杭州东站（儿童安全座椅）", "🚄 高铁 杭州东 → 黄山北（约1.5小时，11/22）", "抵达黄山北后由皖南旅行社接手：15座客车全程（含儿童安全座椅）", "旅行社11/25上午送至黄山北站"],
+        food_en: ["Huizhou cuisine throughout · one Western meal arranged · Zhuo Wen's canteen if available"],
+        food_zh: ["全程徽州菜 · 旅行社安排一顿西餐 · 卓文的小食堂（如可安排）"],
+        activities_en: [
+          "Chengkan — Song and Ming dynasty village, 800 years old, fish lantern show if available",
+          "Hongcun — Moon Pond at dawn, South Lake Academy, Chengzhi Hall wood carvings",
+          "Lucun village wood carving towers (optional)",
+          "Tunxi Old Street",
+          "Full itinerary and pacing arranged by the tour operator based on the group's ages, pregnancy, child, weather and daily energy"
+        ],
+        activities_zh: [
+          "呈坎 — 宋明古村，800年历史，如有鱼灯表演可观看",
+          "宏村 — 清晨月沼倒影、南湖书院、承志堂木雕",
+          "卢村木雕楼（可选）",
+          "屯溪老街",
+          "具体路线、导游与每天节奏全权交由旅行社根据老人、孕妇、孩子、天气及当天体力灵活安排"
         ]
       }
     ]
@@ -439,23 +405,23 @@ const STAGES = [
         dow_zh: "周三",
         title_en: "Return to Shanghai · The Bund",
         title_zh: "返沪·外滩夜景",
-        hotel_en: "Caption by Hyatt Zhongshan Park Shanghai",
-        hotel_zh: "上海中山公园凯悦嘉荟酒店",
-        transport_en: ["High-speed train · Hangzhou → Shanghai (~1 hr)", "Metro Line 2 to hotel"],
-        transport_zh: ["🚄 高铁 杭州东 → 上海虹桥（约1小时）", "地铁2号线至中山公园"],
+        hotel_en: "Caption by Hyatt Zhongshan Park Shanghai · Booked",
+        hotel_zh: "上海中山公园凯悦嘉荟酒店 · 已订",
+        transport_en: ["High-speed train · Huangshan North → Shanghai Hongqiao (~3 hrs)", "Metro Line 2 · Hongqiao Railway Station → Zhongshan Park (direct)", "Evening: Metro Line 2 · Zhongshan Park → East Nanjing Road for the Bund"],
+        transport_zh: ["🚄 高铁 黄山北 → 上海虹桥（约3小时）", "地铁2号线 · 虹桥火车站 → 中山公园（直达）", "晚间：地铁2号线 · 中山公园 → 南京东路，步行至外滩"],
         food_en: [],
         food_zh: [],
         activities_en: [
           "The Bund — Shanghai's grand waterfront promenade, European facades facing the skyline",
-          "Ferry across the Huangpu River — the best view of both banks for ¥2",
-          "Shanghai Tower — 118th floor observation deck, highest in China",
-          "Lujiazui at night: a forest of towers glittering over the river"
+          "Optional: ferry across the Huangpu River if everyone still has energy",
+          "Optional: continue to Lujiazui and Shanghai Tower observation deck — skip after a tiring travel day",
+          "Otherwise, enjoy the Bund skyline and return to the hotel early"
         ],
         activities_zh: [
           "外滩 — 上海最壮观的江边长廊，万国建筑群",
-          "摆渡船过黄浦江 — 两岸最美的视角，2元",
-          "上海中心大厦118层 — 中国最高观光台",
-          "夜晚陆家嘴：璀璨摩天楼群倒映在江面上"
+          "（可选）体力尚可再坐黄浦江摆渡船看两岸夜景",
+          "（可选）继续前往陆家嘴 + 上海中心观景台；当天刚从皖南抵沪，累了直接跳过",
+          "核心只保留外滩夜景即可，随时可地铁回酒店休息"
         ]
       },
       {
@@ -465,10 +431,10 @@ const STAGES = [
         dow_zh: "周四",
         title_en: "Yu Garden · Sihang Warehouse · Xintiandi",
         title_zh: "豫园·四行仓库·新天地",
-        hotel_en: "↑ Caption by Hyatt Zhongshan Park Shanghai",
-        hotel_zh: "↑ 上海中山公园凯悦嘉荟酒店",
-        transport_en: ["All by metro"],
-        transport_zh: ["全程地铁（孩子最爱）"],
+        hotel_en: "Caption by Hyatt Zhongshan Park Shanghai · Booked",
+        hotel_zh: "上海中山公园凯悦嘉荟酒店 · 已订",
+        transport_en: ["Metro: Zhongshan Park → People's Square (Line 2) → Qufu Road (Line 8) for Sihang Warehouse", "Then Line 8 → Laoximen, transfer Line 10 → Yuyuan Garden", "Yuyuan Garden → Xintiandi: Line 10 direct"],
+        transport_zh: ["地铁：中山公园 → 人民广场（2号线）→ 曲阜路（换8号线）到四行仓库", "之后8号线至老西门，换10号线至豫园", "豫园 → 新天地：10号线直达"],
         food_en: ["Lunch · Old City God Temple snacks", "Dinner · Xintiandi — Hangzhou or Shanghai cuisine"],
         food_zh: ["午餐 · 老城隍庙小吃街", "晚餐 · 新天地 — 杭帮菜或本帮菜"],
         activities_en: [
@@ -476,14 +442,14 @@ const STAGES = [
           "Sihang Warehouse — the site of the famous 1937 'Battle of 800 Warriors'",
           "Original shell holes still visible in the west wall — a visceral piece of WWII history",
           "Xintiandi — 1920s shikumen stone-gate houses, now cafes and boutiques",
-          "NIO House in Xintiandi — China's answer to Tesla, with battery-swap demos"
+          "Optional: NIO House in Xintiandi if the child or car fans are still interested"
         ],
         activities_zh: [
           "豫园 — 450年历史的古典园林，城市中心的世外桃源",
           "四行仓库 — 1937年，八百壮士抗日的真实战场",
           "西墙上至今保留真实弹孔 — 最有分量的二战历史现场",
           "新天地 — 1920年代石库门里弄，现在是咖啡馆和精品店",
-          "蔚来NIO House就在新天地 — 中国电动车品牌，换电演示很有趣"
+          "（可选）新天地 NIO House — 如果孩子或爱车的人还有兴致再去"
         ]
       },
       {
@@ -493,22 +459,26 @@ const STAGES = [
         dow_zh: "周五",
         title_en: "Suzhou Day Trip",
         title_zh: "苏州一日游",
-        hotel_en: "↑ Caption by Hyatt Zhongshan Park Shanghai (luggage stays)",
-        hotel_zh: "↑ 上海中山公园凯悦嘉荟酒店（行李留酒店）",
-        transport_en: ["High-speed train · Shanghai → Suzhou (30 min each way)", "Suzhou metro for local travel"],
-        transport_zh: ["🚄 高铁 上海 ↔ 苏州（30分钟）", "苏州市内地铁"],
+        hotel_en: "Caption by Hyatt Zhongshan Park Shanghai · Booked",
+        hotel_zh: "上海中山公园凯悦嘉荟酒店 · 已订",
+        transport_en: ["Metro Line 2 · Zhongshan Park → Shanghai Hongqiao Railway Station (direct)", "High-speed train · Shanghai Hongqiao ↔ Suzhou (~30 min each way)", "Suzhou Station → Pinghe Road: Metro Line 2 (1 stop), transfer Line 6 → Zhuozhengyuan/Suzhou Museum Station (2 stops)", "Garden and museum are in the same compact area; return by the same route"],
+        transport_zh: ["地铁2号线 · 中山公园 → 上海虹桥火车站（直达）", "🚄 高铁 上海虹桥 ↔ 苏州站（约30分钟/程）", "苏州站乘2号线1站至平河路，换6号线2站至拙政园苏博站", "拙政园与苏州博物馆集中在同一区域；返程原路回苏州站"],
         food_en: ["Lunch · Near Suzhou Museum — delicate Suzhou cuisine"],
         food_zh: ["午餐 · 苏州博物馆附近 — 精致苏帮菜"],
         activities_en: [
           "Humble Administrator's Garden — the largest and most celebrated classical garden in China",
           "Suzhou Museum — designed by I.M. Pei, one of the most beautiful buildings in the country",
-          "Pingjiang Road — a canal-side lane unchanged for centuries, take a short boat ride",
-          "Home in time for dinner in Shanghai"
+          "Optional: Pingjiang Road after the museum — continue on Line 6 / short walk; skip if anyone is tired",
+          "Optional: short canal boat ride only if energy and queue length are both good",
+          "Luggage stays at the hotel in Shanghai",
+          "Return to Shanghai in time for a relaxed dinner"
         ],
         activities_zh: [
           "拙政园 — 中国最大最著名的古典园林",
           "苏州博物馆 — 贝聿铭设计，中国最美的建筑之一",
-          "平江路 — 千年未变的运河边小巷，坐船慢慢游",
+          "（可选）苏州博物馆后再去平江路 — 地铁6号线/短距离步行可达；累了直接跳过",
+          "（可选）平江路短程游船 — 仅在体力好、排队不长时坐",
+          "行李留在上海酒店，无需携带往返苏州",
           "傍晚返回上海，轻松晚餐"
         ]
       },
@@ -519,25 +489,25 @@ const STAGES = [
         dow_zh: "周六",
         title_en: "Zhangyuan · Farewell Dinner",
         title_zh: "张园·告别晚宴",
-        hotel_en: "↑ Caption by Hyatt Zhongshan Park Shanghai",
-        hotel_zh: "↑ 上海中山公园凯悦嘉荟酒店",
-        transport_en: ["All by metro"],
-        transport_zh: ["全程地铁"],
+        hotel_en: "Caption by Hyatt Zhongshan Park Shanghai · Booked",
+        hotel_zh: "上海中山公园凯悦嘉荟酒店 · 已订",
+        transport_en: ["Metro Line 2 · Zhongshan Park → West Nanjing Road for Zhangyuan", "Optional Wukang Road: Line 12 → South Shaanxi Road, transfer Line 10 → Shanghai Library, then a short walk", "Farewell dinner transport depends on the Xinrongji branch selected"],
+        transport_zh: ["地铁2号线 · 中山公园 → 南京西路，步行至张园", "（可选）武康路：12号线至陕西南路，换10号线至上海图书馆，再短距离步行", "告别晚宴交通按最终预订的新荣记门店调整"],
         food_en: ["Farewell dinner · Xinrongjie — Michelin one-star Taizhou cuisine · the best meal of the trip"],
         food_zh: ["🥂 告别晚宴 · 新荣记 — 米其林一星，台州菜 · 这一顿是整个旅程最好的一顿饭"],
         activities_en: [
           "Zhangyuan — Shanghai's oldest private garden, restored as a luxury heritage precinct",
           "1882 stone-gate houses now home to Dior, LV, Cartier and evening light installations",
-          "Wukang Road — the most beautiful street in Shanghai, lined with 1930s Art Deco mansions",
-          "Coffee in an old French Concession courtyard",
-          "Final shopping — Longjing tea, silk, Shanghai-made goods"
+          "Optional: Wukang Road — add only if everyone wants another neighborhood walk",
+          "Optional: coffee in an old French Concession courtyard",
+          "Optional: final shopping — Longjing tea, silk, Shanghai-made goods"
         ],
         activities_zh: [
           "张园 — 上海最老的私家花园，修复后成为顶级历史街区",
           "1882年石库门建筑里住着Dior、LV、Cartier，夜晚有光影秀",
-          "武康路 — 上海最美的街道，两旁是1930年代法式花园洋房",
-          "在法租界老院子里喝咖啡",
-          "最后采购 — 龙井茶、丝绸、上海本地好物"
+          "（可选）武康路 — 还有体力、想再散步时再去",
+          "（可选）法租界老院子里喝咖啡",
+          "（可选）最后采购 — 龙井茶、丝绸、上海本地好物"
         ]
       },
       {
@@ -547,20 +517,20 @@ const STAGES = [
         dow_zh: "周日",
         title_en: "Departure Day",
         title_zh: "返程日",
-        hotel_en: "Check out · 12:00",
-        hotel_zh: "退房 · 12:00",
-        transport_en: ["Private car · hotel → Longyang Rd Station", "Maglev · 268 mph · 8 minutes · Pudong T2"],
-        transport_zh: ["商务车 酒店 → 龙阳路站", "磁悬浮 · 430km/h · 8分钟 · 浦东T2"],
+        hotel_en: "Caption by Hyatt Zhongshan Park Shanghai · Booked · Check-out 12:00",
+        hotel_zh: "上海中山公园凯悦嘉荟酒店 · 已订 · 12:00退房",
+        transport_en: ["Pre-booked private car with child seat · hotel → Pudong Airport T2 direct", "Optional: Maglev only if everyone specifically wants the experience; otherwise skip the extra transfer"],
+        transport_zh: ["提前预约带儿童安全座椅商务车 · 酒店 → 浦东机场T2直达", "（可选）只有全家特别想体验磁悬浮时再坐；否则不增加换乘"],
         food_en: ["Slow final breakfast at the hotel"],
         food_zh: ["酒店慢慢享用最后一顿早餐"],
         activities_en: [
           "Check out at noon · luggage stored until departure",
-          "The Maglev train to the airport: 268 mph, 8 minutes — a fitting final Shanghai moment",
+          "Direct private-car transfer to Pudong T2 — simplest with luggage, seniors and child; Maglev only if everyone wants it",
           "Depart 6:00pm — homeward bound"
         ],
         activities_zh: [
           "12:00退房，行李寄存至出发前",
-          "磁悬浮送机：430公里时速，8分钟到浦东 — 上海给你的最后一个惊喜",
+          "商务车直达浦东T2——带行李、老人和孩子最省力；磁悬浮仅作为可选体验",
           "18:00 ✈ 起飞，平安回家"
         ]
       }
@@ -575,8 +545,8 @@ const T = {
   title: { zh: '我们的中国行', en: 'Our China Journey' },
   sub: { zh: '古老传统 · 现代科技 · 家人同行', en: 'Ancient traditions · Modern marvels · Together' },
   meta: {
-    zh: '<strong>Nov 15 – 29, 2026 · 11月15日—11月29日</strong><br>8大1小 · 西安 · 皖南 · 杭州 · 上海',
-    en: "<strong>Nov 15 – 29, 2026 · November 15–29</strong><br>8 adults + 1 child · Xi'an · Anhui · Hangzhou · Shanghai"
+    zh: '<strong>Nov 15 – 29, 2026 · 11月15日—11月29日</strong><br>8大1小 · 西安 · 杭州 · 皖南 · 上海',
+    en: "<strong>Nov 15 – 29, 2026 · November 15–29</strong><br>8 adults + 1 child · Xi'an · Hangzhou · Anhui · Shanghai"
   },
   routeLabel: { zh: '行程路线', en: 'The Route' },
   footer: { zh: '一路顺风，平安归来', en: 'Safe travels, wonderful memories' }
@@ -587,9 +557,9 @@ const ROUTE = [
   { conn: '✈' },
   { dot: '秦', hl: true, name: { zh: "Xi'an 西安", en: "Xi'an" }, nights: { zh: '3晚', en: '3 nights' }, anchor: 'stage-II' },
   { conn: '✈' },
-  { dot: '徽', hl: true, name: { zh: '皖南', en: 'Anhui' }, nights: { zh: '3晚', en: '3 nights' }, anchor: 'stage-III' },
+  { dot: '杭', hl: true, name: { zh: '杭州', en: 'Hangzhou' }, nights: { zh: '3晚', en: '3 nights' }, anchor: 'stage-III' },
   { conn: '🚄' },
-  { dot: '杭', hl: true, name: { zh: '杭州', en: 'Hangzhou' }, nights: { zh: '3晚', en: '3 nights' }, anchor: 'stage-IV' },
+  { dot: '徽', hl: true, name: { zh: '皖南', en: 'Anhui' }, nights: { zh: '3晚', en: '3 nights' }, anchor: 'stage-IV' },
   { conn: '🚄' },
   { dot: '沪', hl: true, name: { zh: '上海', en: 'Shanghai' }, nights: { zh: '4晚', en: '4 nights' }, anchor: 'stage-V' },
   { conn: '✈' },
@@ -599,9 +569,13 @@ const ROUTE = [
 function t(key) { return T[key][lang]; }
 
 function render() {
+  const isEn = lang === 'en';
   document.getElementById('cover-ornament').textContent = t('ornament');
   document.getElementById('cover-title').textContent = t('title');
-  document.getElementById('cover-sub').textContent = t('sub');
+  const titleZh = document.getElementById('cover-title-zh');
+  if (titleZh) titleZh.textContent = isEn ? 'Ancient traditions · Modern marvels · Together' : '古老传统 · 现代科技 · 家人同行';
+  const coverSub = document.getElementById('cover-sub');
+  if (coverSub) coverSub.textContent = t('sub');
   document.getElementById('cover-meta').innerHTML = t('meta');
   document.getElementById('route-label').textContent = t('routeLabel');
   document.getElementById('footer-title').textContent = t('footer');
@@ -620,7 +594,6 @@ function render() {
       '</div>';
   }).join('');
 
-  const isEn = lang === 'en';
   const sc = document.getElementById('stages-container');
   sc.innerHTML = STAGES.map(stage => {
     const daysHtml = stage.days.map(day => {
@@ -637,7 +610,8 @@ function render() {
         '</div>' +
         '<div class="day-right">' +
           '<div class="day-title-txt">' + (isEn ? day.title_en : day.title_zh) + '</div>' +
-          '<div class="day-hotel-txt">◇ ' + (isEn ? day.hotel_en : day.hotel_zh) + '</div>' +
+          (isEn ? '<div class="day-title-zh">' + day.title_zh + '</div>' : '') +
+          '<div class="day-hotel-txt">' + (isEn ? 'Stay · ' : '住宿 · ') + (isEn ? day.hotel_en : day.hotel_zh) + '</div>' +
           (tHtml || fHtml ? '<div class="pills">' + tHtml + fHtml + '</div>' : '') +
           '<div class="acts">' + aHtml + '</div>' +
         '</div>' +
@@ -647,8 +621,11 @@ function render() {
     return '<div class="stage-block" id="stage-' + stage.num + '">' +
       '<div class="stage-header">' +
         '<div class="stage-num">' + stage.num + '</div>' +
-        '<div><div class="stage-title">' + (isEn ? stage.title_en : stage.title_zh) + '</div>' +
-        '<div class="stage-dates">' + stage.dates + '</div></div>' +
+        '<div>' +
+          '<div class="stage-title">' + (isEn ? stage.title_en : stage.title_zh) + '</div>' +
+          (!isEn ? '' : '<div class="stage-title-zh">' + stage.title_zh + '</div>') +
+          '<div class="stage-dates">' + stage.dates + '</div>' +
+        '</div>' +
       '</div>' +
       daysHtml +
     '</div>';
