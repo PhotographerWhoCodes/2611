@@ -16,6 +16,18 @@
 .acts{display:grid;gap:9px}.act-row{display:flex;gap:11px;font:16px/1.65 var(--sans);color:var(--ink)}.act-dot{flex:0 0 4px;height:4px;border-radius:50%;background:var(--accent);margin-top:11px}.day-note{font:14px/1.6 var(--sans);color:var(--muted);margin:7px 0 0}.transport-route{margin:0 0 13px;padding:9px 12px;border-left:2px solid var(--sage);background:#efeee9;font:14px/1.65 var(--sans);color:#44564b}.transport-route b{font-weight:600}.day-extra{margin-top:13px;border-top:1px solid var(--line);padding-top:10px}.day-extra summary{cursor:pointer;list-style:none;font:14px/1.6 var(--sans);color:#6c756e;display:inline-block;border-bottom:1px dotted #a8ada5}.day-extra summary::-webkit-details-marker{display:none}.day-extra summary:before{content:'＋  ';color:var(--sage)}.day-extra[open] summary:before{content:'－  '}.day-extra ul{padding-left:21px;margin:10px 0 3px;color:#555f58}.day-extra li{font:14px/1.65 var(--sans);padding:3px 0}.day-extra .meal-note{font-size:14px;color:var(--muted);margin-top:10px}
 .practical{border-top:1px solid var(--ink);padding:30px 30px 50px}.practical table{border-collapse:collapse;width:100%;font:15px/1.6 var(--sans)}.practical td{border-bottom:1px solid var(--line);padding:10px 8px 10px 0}.practical td:first-child{width:155px;color:var(--muted)}.footer{text-align:center;border-top:1px solid var(--line);padding:35px 20px 50px}#footer-title{font:500 23px var(--serif)}.footer-sub{font:13px var(--sans);color:var(--muted);margin-top:8px}
 @media(max-width:650px){.cover{padding:42px 20px 36px}.route-section{padding:20px 14px}.route-stop{flex-basis:83px}.route-name{font-size:12px}.intro{display:block;padding:22px 20px}.intro h2{font-size:25px}.intro-text{margin-top:12px}.principles{grid-template-columns:1fr 1fr;padding:15px 20px 40px;gap:18px}.chapter-line{padding:0 20px 12px}#stages-container{padding:0 20px 45px}.stage-header{grid-template-columns:42px 1fr;gap:10px}.stage-num{font-size:31px}.stage-title{font-size:24px}.day-entry{grid-template-columns:43px minmax(0,1fr);gap:12px;padding:21px 0}.day-date-num{font-size:30px}.day-title-txt{font-size:21px}.act-row{font-size:16px}.practical{padding:28px 20px}.practical td:first-child{width:105px}}
+@media(max-width:650px){
+.day-entry{display:block;min-width:0}
+.day-left{display:flex;align-items:baseline;gap:12px;margin-bottom:10px}
+.day-date-num{font-size:31px;flex:none}
+.day-dow-txt{display:inline;margin:0;font-size:14px;line-height:1.5;white-space:nowrap}
+.day-right{min-width:0;overflow-wrap:anywhere}
+.day-title-txt{font-size:22px;line-height:1.35;overflow-wrap:normal;word-break:normal}
+.day-hotel-txt,.transport-route,.act-row,.day-extra li{overflow-wrap:anywhere}
+.lang-bar{background:var(--paper);padding-top:max(8px,env(safe-area-inset-top));z-index:100}
+.stage-block{scroll-margin-top:90px}
+.route-flow{scrollbar-width:thin}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -120,20 +132,20 @@ const STAGES = [
         transport_en: ["09:00 · Historical Group departs The Ritz-Carlton Xi'an by private car (child seat)", "Terracotta Army guide arranged for three English-speaking visitors", "Other family members · flexible daytime; meet at hotel by 16:30", "16:30 · driver picks up the whole family at the hotel", "Around 20:30 · private car returns everyone to the hotel"],
         transport_zh: ["09:00 · 历史组从西安丽思卡尔顿出发（商务车含儿童安全座椅）", "历史组 · 3位成人，兵马俑另配英文导游/讲解", "其他家人 · 白天自由活动，16:30前回酒店", "16:30 · 司机到丽思接全家", "约20:30 · 商务车送全家回酒店"],
         food_en: ["Breakfast included at hotel", "Around 12:30–13:30 · lunch in Lintong; ask the guide to recommend a clean, good restaurant suitable for the family", "Family dinner near Big Wild Goose Pagoda before the night walk"],
-        food_zh: ["酒店含早餐", "约12:30–13:30 · 临潼午餐；请导游推荐干净、好吃、适合全家人的餐厅", "全家在大雁塔附近吃晚饭，然后开始夜游"],
+        food_zh: [ "约12:30–13:30 · 临潼午餐；请导游推荐干净、好吃、适合全家人的餐厅", "全家在大雁塔附近吃晚饭，然后开始夜游"],
         activities_en: [
-          "Historical Group: 3 English-speaking visitors. Depart at 09:00; the Terracotta Army is the only main daytime historical attraction — explicitly no Huaqing Palace or Mount Li",
-          "Terracotta Army: about 2–2.5 hours with an English guide; a guided visit of approximately 2–2.5 hours",
+          "09:00 · Three English-speaking family members visit the Terracotta Warriors with a guide",
+          "Terracotta Warriors guided visit · approximately 2–2.5 hours",
           "After lunch, return to The Ritz-Carlton around 14:30; Historical Group rests at the hotel around 15:00–16:30",
-          "Other family members: flexible daytime plans. Stay completely flexible all day — haircut, kid activities, nap, hotel or a mall are all optional; MOMOPARK is only one possible choice, never a required stop",
+          "Other family members: a flexible day at the hotel or nearby",
           "16:30: the driver picks up the entire family at The Ritz-Carlton. Dinner near Big Wild Goose Pagoda → pagoda night view → Grand Tang Mall",
           "Around 20:30: private car returns everyone to The Ritz-Carlton Xi'an"
         ],
         activities_zh: [
-          "历史组：3位英语访客。09:00出发；白天唯一主要历史景点是兵马俑，明确不去华清宫、骊山",
-          "兵马俑：英文导游讲解约2–2.5小时；三位英语访客有专人讲解",
+          "09:00 · 三位英语访客由英文导游陪同参观兵马俑",
+          "兵马俑英文导览约2–2.5小时",
           "午餐后约14:30回到西安丽思卡尔顿；历史组约15:00–16:30在酒店休息",
-          "其他家人：白天自由活动。全天自由机动——剪头发、遛娃、午睡、酒店或商场都可以；MOMOPARK只是备选，不是必去点；16:30前回丽思",
+          "其他家人自由活动，16:30前回酒店集合",
           "16:30：司机到丽思接全家。大雁塔附近晚餐 → 大雁塔夜景 → 大唐不夜城",
           "约20:30：商务车送全家回西安丽思卡尔顿"
         ]
@@ -147,22 +159,22 @@ const STAGES = [
         title_zh: "陕博珍宝 · 机动下午",
         hotel_en: "The Ritz-Carlton Xi'an",
         hotel_zh: "西安丽思卡尔顿",
-        transport_en: ["09:00 · depart The Ritz-Carlton Xi'an", "Private car on standby all day (child seat)", "Shaanxi History Museum · English guide different from the 11/17 guide", "Flexible afternoon based on guide/driver recommendation; return to hotel by 17:00"],
-        transport_zh: ["09:00 · 从西安丽思卡尔顿出发", "商务车全天跟车（儿童安全座椅）", "陕西历史博物馆 · 另配英文导游，与11/17导游不同", "下午由当地导游/司机根据当天情况推荐顺路活动；17:00前回酒店"],
+        transport_en: ["09:00 · depart The Ritz-Carlton Xi'an", "Private car on standby all day (child seat)", "Shaanxi History Museum · English-speaking guide", "Flexible afternoon based on guide/driver recommendation; return to hotel by 17:00"],
+        transport_zh: ["09:00 · 从西安丽思卡尔顿出发", "商务车全天跟车（儿童安全座椅）", "陕西历史博物馆 · 英文导游", "下午由当地导游/司机根据当天情况推荐顺路活动；17:00前回酒店"],
         food_en: ["Breakfast included at hotel", "Lunch near each group's activity or together if timing works", "17:30 dinner at Xian Kitchen in The Ritz-Carlton (preferred); Jing Xuan as backup. Enjoy a relaxed family meal"],
-        food_zh: ["酒店含早餐", "各组就近午餐；时间合适也可汇合吃", "17:30 西安丽思鲜厨房晚餐（首选）；景轩备选。全家轻松享用晚餐"],
+        food_zh: [ "各组就近午餐；时间合适也可汇合吃", "17:30 西安丽思鲜厨房晚餐（首选）；景轩备选。全家轻松享用晚餐"],
         activities_en: [
-          "Main attraction: Shaanxi History Museum with an English guide different from the 11/17 guide; enjoy a guided introduction to the collection",
-          "Afternoon stays intentionally flexible: ask the local guide/driver to recommend one light, convenient, no-backtracking activity of about 1–2 hours based on weather, traffic and everyone’s energy",
-          "Avoid another major museum or high-intensity walk; if anyone is tired, return directly to the hotel",
-          "Be back at The Ritz-Carlton by 17:00",
+          "Morning: guided visit to Shaanxi History Museum",
+          "Afternoon: free time or a nearby stop recommended by the driver",
+          
+          "Return to the Ritz-Carlton by 17:00",
           "17:30: early dinner at Xian Kitchen (preferred; Jing Xuan as backup). Aim to finish around 19:00, then pack and rest for the next morning flight"
         ],
         activities_zh: [
-          "主要景点：陕西历史博物馆，配英文导游（与11/17导游不同）；参观馆藏与历史文物",
-          "下午保持机动：请当地导游/司机根据天气、交通和大家体力，推荐一个约1–2小时、轻松、方便、顺路不折返的活动",
-          "不再加另一个大型博物馆，不安排高强度步行；如果累了就直接回酒店",
-          "17:00前回到西安丽思卡尔顿",
+          "上午：英文导游带领参观陕西历史博物馆",
+          "下午：自由活动，或由司机推荐一处附近景点",
+          
+          "17:00前返回丽思卡尔顿",
           "17:30 鲜厨房早点吃晚餐（首选，景轩备选）；争取19:00左右结束，回房收拾行李、早点休息"
         ]
       }
@@ -207,14 +219,14 @@ const STAGES = [
           "Rest briefly / do laundry if useful",
           "Late afternoon: Wulinmen Wharf → daytime / late-afternoon Grand Canal boat ride",
           "Enjoy the canal scenery, have dinner nearby, then return to the hotel",
-          "If the flight or transfer runs late, skip the boat and rest — no other sightseeing is required"
+          "Grand Canal cruise is optional depending on arrival time"
         ],
         activities_zh: [
           "下午抵达 SFEEL，check-in，安顿行李",
           "先休息一下；有需要可顺手洗衣",
           "傍晚前后：武林门码头 → 白天 / 下午京杭大运河游船",
           "看看运河景色，游船后就近吃晚饭，然后回酒店",
-          "如果航班或接送耽误，就直接取消游船休息，不再硬塞其他景点"
+          "若抵达较晚，运河游船改为自由休息"
         ]
       },
       {
@@ -242,13 +254,13 @@ const STAGES = [
         ],
         activities_en: [
           "West Lake on foot — choose a light section such as Quyuan Fenghe, a short stretch of Su Causeway, and Guozhuang Garden",
-          "Skip the West Lake boat ride today — the Grand Canal boat ride on Nov 19 already covers the boat experience",
+          
           "Lingyin Temple + Feilai Peak Buddhist cliff carvings — core sight of the day",
           "Return to SFEEL for rest; laundry available"
         ],
         activities_zh: [
           "西湖陆上轻松游——可选曲院风荷、苏堤一小段、郭庄，按体力取舍",
-          "今天不再安排西湖游船——11/19 已经安排京杭大运河游船，避免连续两天坐船重复",
+          
           "灵隐寺 + 飞来峰石窟造像——当天核心项目",
           "回 SFEEL 休息；酒店可洗衣"
         ]
@@ -282,19 +294,19 @@ const STAGES = [
         ],
         activities_en: [
           "Option A · Xixi Wetland — water channels, reeds and a slow nature day; add a boat ride if weather and queues are good",
-          "Best if the group wants something easy, outdoorsy and toddler-friendly",
+          
           "Option B · Jingshan Temple — a quieter cultural day focused on temple, mountain setting and Zen atmosphere",
-          "Combine Jingshan Temple with Jingshan tea / tea house rather than adding a separate tea-village stop",
-          "Best if the group wants more cultural depth and does not mind the longer drive",
-          "No need to decide in advance — choose the better option on Nov 21 based on weather and energy",
+          "Enjoy Jingshan tea after the temple visit",
+          
+          "Choose an option on Nov 20 based on the forecast",
           "Return to SFEEL, rest, do laundry if needed, and pack for Southern Anhui tomorrow"
         ],
         activities_zh: [
           "方案A · 西溪湿地——水网、芦苇、湿地景观，天气和排队合适时可坐船",
-          "更适合想轻松一点、亲近自然、带孩子也容易参与的一天",
+          
           "方案B · 径山寺——以寺院、山林和禅意为主，文化感更强",
-          "把径山寺和径山茶 / 茶馆结合，不再单独安排龙井茶乡",
-          "更适合大家想看文化、也不介意车程更长的时候",
+          "径山寺参观后体验径山茶",
+          
           "不用提前定死——11/21 当天看天气和体力再决定",
           "回 SFEEL 休息；如有需要可洗衣，并收拾第二天去皖南的行李"
         ]
@@ -369,21 +381,21 @@ const STAGES = [
         food_en: ["Breakfast · Shudetang", "Lunch · near Lucun, chosen by the guide for cleanliness and convenience", "Dinner · Hongcun"],
         food_zh: ["早餐 · 澍德堂", "午餐 · 卢村附近，由导游按卫生、停车和老人孩子方便程度推荐", "晚餐 · 宏村"],
         activities_en: [
-          "Slow morning: breakfast, pack luggage and check out without rushing",
+          "Morning: breakfast and checkout",
           "Explore Chengkan for about 2 hours",
           "Lunch near Lucun, then visit the wood-carving houses for about 1–1.5 hours",
           "Continue to Hongcun and check in at Nanhu Guanyuan",
           "Explore only part of Hongcun in the afternoon — South Lake / South Lake Academy area is a natural first section",
-          "Optional easy evening stroll; no need to finish Hongcun in one day",
+          "Optional evening stroll in Hongcun",
           "Laundry available at Nanhu Guanyuan"
         ],
         activities_zh: [
-          "早上惬意起床，早餐、收拾行李，不赶时间",
+          "上午：早餐、退房",
           "正式游览呈坎约2小时",
           "卢村附近午饭后，游览木雕楼约1–1.5小时",
           "前往宏村，入住南湖观园",
           "下午只游览一部分宏村——可先看南湖 / 南湖书院一带",
-          "晚上有精神就轻松散步，不需要一天把宏村走完",
+          "晚上可在宏村散步",
           "南湖观园可洗衣"
         ]
       },
@@ -405,16 +417,16 @@ const STAGES = [
           "Continue the parts not covered yesterday — e.g. Moon Pond and Chengzhi Hall, based on energy",
           "12:00 lunch in Hongcun",
           "After lunch, visit Mukeng Bamboo Sea",
-          "Take a light route only: enjoy the bamboo scenery without requiring the full loop, steep stairs or high lookout points",
+          "At Mukeng Bamboo Sea, follow a short scenic route",
           "Return to Hongcun in the afternoon; rest at Nanhu Guanyuan and use the laundry if useful",
           "Optional final evening stroll in Hongcun"
         ],
         activities_zh: [
-          "早餐后趁人少，在宏村晨间散步",
+          "早晨在宏村散步",
           "继续游览前一天没看的部分，例如月沼、承志堂一带；按体力取舍",
           "12:00 在宏村吃午饭",
           "午饭后前往木坑竹海",
-          "木坑竹海只走轻松路线：看竹海即可，不要求完整环线，不强求陡台阶或高处观景台",
+          "木坑竹海选择平缓的短线路欣赏竹景",
           "下午回宏村，南湖观园休息；如有需要可洗衣",
           "傍晚 / 晚上可随意补逛宏村"
         ]
@@ -441,16 +453,14 @@ const STAGES = [
         food_en: [],
         food_zh: [],
         activities_en: [
-          "The Bund — Shanghai's grand waterfront promenade, European facades facing the skyline",
-          "Optional: ferry across the Huangpu River if everyone still has energy",
-          "Optional: continue to Lujiazui and Shanghai Tower observation deck — skip after a tiring travel day",
-          "Otherwise, enjoy the Bund skyline and return to the hotel early"
+          "Evening: the Bund waterfront and Shanghai skyline",
+          "Optional: Songmont at Rockbund, 149 Yuanmingyuan Road (Hammy Building), before or after the waterfront walk",
+          "After the waterfront visit, return to the hotel"
         ],
         activities_zh: [
-          "外滩 — 上海最壮观的江边长廊，万国建筑群",
-          "（可选）体力尚可再坐黄浦江摆渡船看两岸夜景",
-          "（可选）继续前往陆家嘴 + 上海中心观景台；当天刚从皖南抵沪，累了直接跳过",
-          "核心只保留外滩夜景即可，随时可地铁回酒店休息"
+          "傍晚：外滩漫步，欣赏浦东天际线与万国建筑群",
+          "可选：外滩源圆明园路149号哈密大楼的山下有松门店，顺路试包",
+          "欣赏外滩夜景后乘车回酒店"
         ]
       },
       {
@@ -462,8 +472,8 @@ const STAGES = [
         title_zh: "豫园·新天地",
         hotel_en: "Caption by Hyatt Zhongshan Park Shanghai",
         hotel_zh: "上海中山公园凯悦嘉荟酒店",
-        transport_en: ["Metro: Zhongshan Park → People's Square (Line 2) → Qufu Road (Line 8) for Sihang Warehouse", "Then Line 8 → Laoximen, transfer Line 10 → Yuyuan Garden", "Yuyuan Garden → Xintiandi: Line 10 direct"],
-        transport_zh: ["地铁：中山公园 → 人民广场（2号线）→ 曲阜路（换8号线）到四行仓库", "之后8号线至老西门，换10号线至豫园", "豫园 → 新天地：10号线直达"],
+        transport_en: ["Taxi or prearranged car: Zhongshan Park → Yu Garden → Xintiandi; optional Sihang Warehouse separately"],
+        transport_zh: ["当天建议分段打车或包车：中山公园 → 豫园 → 新天地；四行仓库另作可选"],
         food_en: ["Lunch · Old City God Temple snacks", "Dinner · Xintiandi — Hangzhou or Shanghai cuisine"],
         food_zh: ["午餐 · 老城隍庙小吃街", "晚餐 · 新天地 — 杭帮菜或本帮菜"],
         activities_en: [
@@ -486,24 +496,24 @@ const STAGES = [
         title_zh: "苏州一日游",
         hotel_en: "Caption by Hyatt Zhongshan Park Shanghai",
         hotel_zh: "上海中山公园凯悦嘉荟酒店",
-        transport_en: ["Metro Line 2 · Zhongshan Park → Shanghai Hongqiao Railway Station (direct)", "High-speed train · Shanghai Hongqiao ↔ Suzhou (~30 min each way)", "Suzhou Station → Pinghe Road: Metro Line 2 (1 stop), transfer Line 6 → Zhuozhengyuan/Suzhou Museum Station (2 stops)", "Garden and museum are in the same compact area; return by the same route"],
-        transport_zh: ["地铁2号线 · 中山公园 → 上海虹桥火车站（直达）", "🚄 高铁 上海虹桥 ↔ 苏州站（约30分钟/程）", "苏州站乘2号线1站至平河路，换6号线2站至拙政园苏博站", "拙政园与苏州博物馆集中在同一区域；返程原路回苏州站"],
+        transport_en: ["Metro Line 2 · Zhongshan Park → Shanghai Hongqiao Railway Station (direct)", "High-speed train · Shanghai Hongqiao ↔ Suzhou (~30 min each way)", "Prearranged local car: Suzhou Railway Station ↔ Humble Administrator’s Garden / Suzhou Museum"],
+        transport_zh: ["地铁2号线 · 中山公园 → 上海虹桥火车站（直达）", "🚄 高铁 上海虹桥 ↔ 苏州站（约30分钟/程）", "苏州站预约车辆接送 → 拙政园、苏州博物馆（两处邻近）→ 返回苏州站"],
         food_en: ["Lunch · Near Suzhou Museum — delicate Suzhou cuisine"],
         food_zh: ["午餐 · 苏州博物馆附近 — 精致苏帮菜"],
         activities_en: [
           "Humble Administrator's Garden — the largest and most celebrated classical garden in China",
-          "Suzhou Museum — designed by I.M. Pei, one of the most beautiful buildings in the country",
-          "Optional: Pingjiang Road after the museum — continue on Line 6 / short walk; skip if anyone is tired",
+          "Suzhou Museum — designed by I. M. Pei",
+          "Optional: a short stroll along Pingjiang Road",
           "Optional: short canal boat ride only if energy and queue length are both good",
-          "Luggage stays at the hotel in Shanghai",
+          
           "Return to Shanghai in time for a relaxed dinner"
         ],
         activities_zh: [
           "拙政园 — 中国最大最著名的古典园林",
-          "苏州博物馆 — 贝聿铭设计，中国最美的建筑之一",
-          "（可选）苏州博物馆后再去平江路 — 地铁6号线/短距离步行可达；累了直接跳过",
+          "苏州博物馆 — 贝聿铭设计的现代建筑",
+          "可选：平江路散步",
           "（可选）平江路短程游船 — 仅在体力好、排队不长时坐",
-          "行李留在上海酒店，无需携带往返苏州",
+          
           "傍晚返回上海，轻松晚餐"
         ]
       },
@@ -523,16 +533,16 @@ const STAGES = [
         activities_en: [
           "Morning: breakfast, followed by a relaxed visit to Zhongshan Park to see everyday neighborhood life",
           "Around noon: Xin Rong Ji family farewell lunch",
-          "Afternoon: Huaihai Middle Road near Shaanxi South Road — Songmont flagship at No. 817–819. Enjoy bag shopping while the rest of the family strolls or has coffee nearby",
+          "Afternoon: Huaihai Middle Road near Shaanxi South Road; cafés and a neighborhood stroll. Songmont flagship (817–819 Huaihai Middle Road) is a backup shopping stop",
           "Optional: Wukang Mansion at the western end of Huaihai Middle Road, reached by a short drive if time and energy allow",
-          "Keep dinner light and return to the hotel early to rest before the long-haul flight"
+          "Return to the hotel in the late afternoon"
         ],
         activities_zh: [
           "上午：早餐后逛中山公园，看看上海市民晨间生活",
           "中午：新荣记告别午餐",
-          "下午：淮海中路陕西南路附近自由活动；山下有松旗舰店（淮海中路817–819号），其他家人在附近散步、喝咖啡",
+          "下午：淮海中路陕西南路附近散步、喝咖啡；山下有松旗舰店（淮海中路817–819号）作为补逛选择",
           "（可选）如时间和体力允许，乘车去淮海中路西段的武康大楼，看看历史街景",
-          "晚餐简单吃，长途飞行前早点回酒店休息"
+          "傍晚返回酒店"
         ]
       },
       {
@@ -546,8 +556,8 @@ const STAGES = [
         hotel_zh: "上海中山公园凯悦嘉荟酒店 · 12:00退房",
         transport_en: ["Pre-booked private car with child seat · hotel → Pudong Airport T2 direct", "Optional: Maglev only if everyone specifically wants the experience; otherwise skip the extra transfer"],
         transport_zh: ["提前预约带儿童安全座椅商务车 · 酒店 → 浦东机场T2直达", "（可选）只有全家特别想体验磁悬浮时再坐；否则不增加换乘"],
-        food_en: ["Slow final breakfast at the hotel"],
-        food_zh: ["酒店慢慢享用最后一顿早餐"],
+        food_en: ["Breakfast near the hotel"],
+        food_zh: ["早餐后整理行李"],
         activities_en: [
           "Check out at noon · luggage stored until departure",
           "Direct private-car transfer to Pudong T2 — simplest with luggage, seniors and child; Maglev only if everyone wants it",
@@ -631,22 +641,22 @@ function render() {
   const sc = document.getElementById('stages-container');
   sc.innerHTML = STAGES.map(stage => {
     const daysHtml = stage.days.map(day => {
-      const transport = (isEn ? day.transport_en : day.transport_zh) || [];
-      const food = (isEn ? day.food_en : day.food_zh) || [];
-      const acts = (isEn ? day.activities_en : day.activities_zh) || [];
+      const transport = ((isEn ? day.transport_en : day.transport_zh) || []).filter(x => typeof x === 'string' && x.trim() && !/^[，,；;、。.!?]/.test(x.trim()));
+      const food = ((isEn ? day.food_en : day.food_zh) || []).filter(x => typeof x === 'string' && x.trim() && !/^[，,；;、。.!?]/.test(x.trim()));
+      const acts = ((isEn ? day.activities_en : day.activities_zh) || []).filter(x => typeof x === 'string' && x.trim() && !/^[，,；;、。.!?]/.test(x.trim()));
       // Show the key route just once. Detailed movements remain available on demand.
       const journey = (day.date === '16' && stage.num === 'II')
         ? (isEn ? 'Airport → Ritz-Carlton → Yongning Gate → Sajin Bridge → hotel · same pre-arranged driver'
                 : '机场 → 丽思卡尔顿 → 永宁门 → 洒金桥 → 酒店 · 同一司机全程接送')
         : (transport.length ? transport[0] : '');
       const routeHtml = journey ? '<div class="transport-route"><b>'+(isEn?'Getting around':'交通')+' · </b>'+journey+'</div>' : '';
-      const detailHtml = transport.length > 1 || food.length ? '<details class="day-extra"><summary>'+(isEn?'Transport & dining details':'交通与用餐细节')+'</summary><ul>'+transport.slice(day.date==='16' && stage.num==='II' ? 1 : 0).map(x=>'<li>'+x+'</li>').join('')+'</ul>'+(food.length?'<div class="meal-note">'+food.join(' · ')+'</div>':'')+'</details>' : '';
+      const detailHtml = transport.length > 1 || food.length ? '<details class="day-extra"><summary>'+(isEn?'Transport & dining details':'交通与用餐细节')+'</summary>'+(transport.slice(day.date==='16' && stage.num==='II' ? 1 : 0).length ? '<ul>'+transport.slice(day.date==='16' && stage.num==='II' ? 1 : 0).map(x=>'<li>'+x+'</li>').join('')+'</ul>' : '')+(food.length?'<div class="meal-note">'+food.join(' · ')+'</div>':'')+'</details>' : '';
       // Avoid showing the same logistical sentences twice as primary activities.
       let visibleActs = acts;
       if (day.date === '16' && stage.num === 'II') visibleActs = isEn
         ? ['Afternoon: explore a short section of the Ancient City Wall from Yongning Gate; return to the same gate.', 'Evening: local specialties and a relaxed walk around Sajin Bridge food street.', 'Optional: glimpse the Bell Tower lights on the way back if convenient.']
         : ['下午：从永宁门登上西安城墙，轻松游览一小段，再从原门下城。','晚上：洒金桥美食街品尝西安小吃，饭后司机送回酒店。','可选：返程顺路欣赏钟楼夜景，不必特地下车。'];
-      const aHtml = visibleActs.map(x=>'<div class="act-row"><span class="act-dot"></span><span>'+x+'</span></div>').join('');
+      const aHtml = visibleActs.filter(x => typeof x === 'string' && x.trim()).map(x=>'<div class="act-row"><span class="act-dot"></span><span>'+x+'</span></div>').join('');
       return '<div class="day-entry">' +
         '<div class="day-left">' +
           '<span class="day-date-num">' + day.date + '</span>' +
@@ -687,6 +697,5 @@ function setLang(l) {
 
 render();
 </script>
-
 
 </body></html>
