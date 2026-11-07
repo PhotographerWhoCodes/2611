@@ -14,7 +14,7 @@
 #stages-container{padding:0 30px 55px}.stage-block{border-top:1px solid var(--ink);padding:33px 0 15px;scroll-margin-top:65px}.stage-header{display:grid;grid-template-columns:58px 1fr;gap:15px;align-items:start;margin-bottom:22px}.stage-num{font:italic 36px/1 Georgia,serif;color:var(--accent)}.stage-title{font:500 29px/1.3 var(--serif)}.stage-title-zh,.stage-dates{font:14px/1.6 var(--sans);color:var(--muted);margin-top:5px}
 .day-entry{display:grid;grid-template-columns:65px minmax(0,1fr);gap:20px;border-top:1px solid var(--line);padding:24px 0 27px}.day-date-num{font:500 35px/1 var(--serif)}.day-dow-txt{display:block;font:13px/1.4 var(--sans);color:var(--muted);margin-top:7px}.day-title-txt{font:500 23px/1.35 var(--serif);color:var(--ink)}.day-title-zh{font:14px/1.6 var(--sans);color:var(--muted);margin:4px 0 7px}.day-hotel-txt{display:block;font:14px/1.5 var(--sans);color:var(--muted);margin:8px 0 14px}
 .acts{display:grid;gap:9px}.act-row{display:flex;gap:11px;font:16px/1.65 var(--sans);color:var(--ink)}.act-dot{flex:0 0 4px;height:4px;border-radius:50%;background:var(--accent);margin-top:11px}.day-note{font:14px/1.6 var(--sans);color:var(--muted);margin:7px 0 0}.transport-route{margin:0 0 13px;padding:9px 12px;border-left:2px solid var(--sage);background:#efeee9;font:14px/1.65 var(--sans);color:#44564b}.transport-route b{font-weight:600}.day-extra{margin-top:13px;border-top:1px solid var(--line);padding-top:10px}.day-extra summary{cursor:pointer;list-style:none;font:14px/1.6 var(--sans);color:#6c756e;display:inline-block;border-bottom:1px dotted #a8ada5}.day-extra summary::-webkit-details-marker{display:none}.day-extra summary:before{content:'＋  ';color:var(--sage)}.day-extra[open] summary:before{content:'－  '}.day-extra ul{padding-left:21px;margin:10px 0 3px;color:#555f58}.day-extra li{font:14px/1.65 var(--sans);padding:3px 0}.day-extra .meal-note{font-size:14px;color:var(--muted);margin-top:10px}
-.practical{border-top:1px solid var(--ink);padding:30px 30px 50px}.practical table{border-collapse:collapse;width:100%;font:15px/1.6 var(--sans)}.practical td{border-bottom:1px solid var(--line);padding:10px 8px 10px 0}.practical td:first-child{width:155px;color:var(--muted)}.footer{text-align:center;border-top:1px solid var(--line);padding:35px 20px 50px}#footer-title{font:500 23px var(--serif)}.footer-sub{font:13px var(--sans);color:var(--muted);margin-top:8px}
+.practical{border-top:1px solid var(--ink);padding:30px 30px 50px}.practical table{border-collapse:collapse;width:100%;font:15px/1.6 var(--sans)}.practical td{border-bottom:1px solid var(--line);padding:10px 8px 10px 0;vertical-align:top}.practical td:first-child{width:155px;color:var(--muted)}.stay-address{display:block;margin-top:3px;color:var(--muted);font-size:14px;line-height:1.55}.footer{text-align:center;border-top:1px solid var(--line);padding:35px 20px 50px}#footer-title{font:500 23px var(--serif)}.footer-sub{font:13px var(--sans);color:var(--muted);margin-top:8px}
 @media(max-width:650px){.cover{padding:42px 20px 36px}.route-section{padding:20px 14px}.route-stop{flex-basis:83px}.route-name{font-size:12px}.intro{display:block;padding:22px 20px}.intro h2{font-size:25px}.intro-text{margin-top:12px}.principles{grid-template-columns:1fr 1fr;padding:15px 20px 40px;gap:18px}.chapter-line{padding:0 20px 12px}#stages-container{padding:0 20px 45px}.stage-header{grid-template-columns:42px 1fr;gap:10px}.stage-num{font-size:31px}.stage-title{font-size:24px}.day-entry{grid-template-columns:43px minmax(0,1fr);gap:12px;padding:21px 0}.day-date-num{font-size:30px}.day-title-txt{font-size:21px}.act-row{font-size:16px}.practical{padding:28px 20px}.practical td:first-child{width:105px}}
 @media(max-width:650px){
 .day-entry{display:block;min-width:0}
@@ -54,8 +54,8 @@
 </div>
 <script>
 const EDITORIAL = {
- zh: {label:'三代同游 · 中国',title:'一路同行，慢慢看中国',body:'从古都西安到江南水乡，再到现代上海。希望用舒适从容的节奏，感受不同地方的历史、建筑、风景与日常生活。让每个人都有享受旅途、自在休息的空间。',chapter:'每日行程 / DAILY ITINERARY',practical:'住宿与出行',stay:'实用信息',principles:[['体验中国','从古都、园林到海派城市，体验不同地域的文化。'],['家人同行','一起吃饭、散步、聊天，享受相聚的时间。'],['舒适优先','照顾每个人的健康和体力，不必赶路。'],['灵活安排','天气、兴趣与体力不同，随时调整可选活动。']],hotels:[['11/15 · 上海浦东','浦东机场遨途酒店 · 1晚'],['11/16–19 · 西安','西安丽思卡尔顿 · 3晚 · 含早餐'],['11/19–22 · 杭州','SFEEL设计师酒店（西湖武林广场）· 3晚 · 含早餐 · 可洗衣'],['11/22 · 呈坎','澍德堂 · 1晚 · 下午茶'],['11/23–25 · 宏村','南湖观园 · 2晚 · 可洗衣'],['11/25–29 · 上海','中山公园凯悦嘉荟酒店 · 4晚 · 不含早餐'],['跨城交通','11/16 飞西安 · 11/19 飞杭州 · 11/22 高铁到黄山北 · 11/25 高铁到上海虹桥 · 11/27 苏州往返']]},
- en: {label:'THREE GENERATIONS · CHINA',title:'A journey to enjoy together',body:'From the ancient capital of Xi’an to the landscapes of Jiangnan and the streets of modern Shanghai: our journey is about discovering history, architecture and everyday life, while leaving time to relax and enjoy being together.',chapter:'DAILY ITINERARY',practical:'Stay & Travel',stay:'Helpful details',principles:[['Discover China','Explore the contrasts between ancient capitals, gardens, villages and a modern metropolis.'],['Together','Share meals, walks and memorable moments across generations.'],['Comfort first','Respect everyone’s wellbeing and energy; there is no need to rush.'],['Stay flexible','Optional outings can change with the weather, interests and energy levels.']],hotels:[['Nov 15 · Pudong','Aerotel Shanghai Pudong Airport · 1 night'],['Nov 16–19 · Xi’an','The Ritz-Carlton Xi’an · 3 nights · Breakfast included'],['Nov 19–22 · Hangzhou','SFEEL Designer Hotel (Wulin Square) · 3 nights · Breakfast included · Laundry'],['Nov 22 · Chengkan','Shudetang Guesthouse · 1 night · Afternoon tea'],['Nov 23–25 · Hongcun','Nanhu Guanyuan · 2 nights · Laundry'],['Nov 25–29 · Shanghai','Caption by Hyatt Zhongshan Park · 4 nights · Breakfast not included'],['Intercity travel','Nov 16 flight to Xi’an · Nov 19 flight to Hangzhou · Nov 22 train to Huangshan North · Nov 25 train to Shanghai Hongqiao · Nov 27 Suzhou round-trip']]}
+ zh: {label:'三代同游 · 中国',title:'一路同行，慢慢看中国',body:'从古都西安到江南水乡，再到现代上海。希望用舒适从容的节奏，感受不同地方的历史、建筑、风景与日常生活。让每个人都有享受旅途、自在休息的空间。',chapter:'每日行程 / DAILY ITINERARY',practical:'住宿与出行',stay:'实用信息',principles:[['体验中国','从古都、园林到海派城市，体验不同地域的文化。'],['家人同行','一起吃饭、散步、聊天，享受相聚的时间。'],['舒适优先','照顾每个人的健康和体力，不必赶路。'],['灵活安排','天气、兴趣与体力不同，随时调整可选活动。']],hotels:[['11/15 · 上海浦东','浦东机场遨途酒店 · 1晚','浦东机场T2航站楼6–7层（非禁区）'],['11/16–19 · 西安','西安丽思卡尔顿 · 3晚 · 含早餐','雁塔区科技二路50号'],['11/19–22 · 杭州','SFEEL设计师酒店（西湖武林广场）· 3晚 · 含早餐 · 可洗衣','西湖区天目山路7号东海创意中心9号楼'],['11/22 · 呈坎','澍德堂 · 1晚 · 下午茶','徽州区呈坎镇后街57号'],['11/23–25 · 宏村','南湖观园 · 2晚 · 可洗衣','黟县宏村镇宏村南湖景区内'],['11/25–29 · 上海','中山公园凯悦嘉荟酒店 · 4晚 · 不含早餐','长宁区定西路1525号'],['跨城交通','11/16 HO1007 上海浦东T2 08:05 → 西安 · 11/19 CA8504 西安11:40 → 杭州13:50 · 高铁信息待出票后补充']]},
+ en: {label:'THREE GENERATIONS · CHINA',title:'A journey to enjoy together',body:'From the ancient capital of Xi’an to the landscapes of Jiangnan and the streets of modern Shanghai: our journey is about discovering history, architecture and everyday life, while leaving time to relax and enjoy being together.',chapter:'DAILY ITINERARY',practical:'Stay & Travel',stay:'Helpful details',principles:[['Discover China','Explore the contrasts between ancient capitals, gardens, villages and a modern metropolis.'],['Together','Share meals, walks and memorable moments across generations.'],['Comfort first','Respect everyone’s wellbeing and energy; there is no need to rush.'],['Stay flexible','Optional outings can change with the weather, interests and energy levels.']],hotels:[['Nov 15 · Pudong','Aerotel Shanghai Pudong Airport · 1 night','Levels 6–7, Terminal 2, landside'],['Nov 16–19 · Xi’an','The Ritz-Carlton Xi’an · 3 nights · Breakfast included','50 Keji 2nd Road, Yanta District'],['Nov 19–22 · Hangzhou','SFEEL Designer Hotel (Wulin Square) · 3 nights · Breakfast included · Laundry','Building 9, Donghai Creative Center, 7 Tianmushan Road, Xihu District'],['Nov 22 · Chengkan','Shudetang Guesthouse · 1 night · Afternoon tea','57 Houjie, Chengkan Town, Huizhou District'],['Nov 23–25 · Hongcun','Nanhu Guanyuan · 2 nights · Laundry','Inside Hongcun South Lake Scenic Area, Hongcun Town, Yixian County'],['Nov 25–29 · Shanghai','Caption by Hyatt Zhongshan Park · 4 nights · Breakfast not included','1525 Dingxi Road, Changning District'],['Intercity travel','Nov 16 HO1007 · Shanghai Pudong T2 08:05 → Xi’an · Nov 19 CA8504 · Xi’an 11:40 → Hangzhou 13:50 · Train details to be added after ticketing']]}
 };
 const STAGES = [
   {
@@ -108,13 +108,13 @@ const STAGES = [
         "hotel_en": "The Ritz-Carlton Xi'an",
         "hotel_zh": "西安丽思卡尔顿",
         "transport_en": [
-          "Flight · Shanghai Pudong Airport → Xi'an (~2 hrs)",
+          "Flight HO1007 · Shanghai Pudong T2 08:05 → Xi'an (~2 hrs)",
           "Pre-arranged airport pickup driver stays with the family for the day: Xi'an Airport → Ritz-Carlton → Yongning Gate (South Gate) → Sajin Bridge → Ritz-Carlton",
           "Late afternoon: driver drops off at Yongning Gate; enjoy a short 30–45-minute wall visit and return to the same gate for pickup",
           "Driver takes everyone from Yongning Gate to Sajin Bridge food street, waits during dinner, then returns everyone to the hotel"
         ],
         "transport_zh": [
-          "✈ 上海浦东机场 → 西安（约2小时）",
+          "✈ HO1007 · 上海浦东T2 08:05 → 西安（约2小时）",
           "已与接机司机约好当天全程接送：西安机场 → 丽思卡尔顿 → 永宁门（南门）→ 洒金桥 → 丽思卡尔顿",
           "傍晚司机送至永宁门；城墙上轻松步行约30–45分钟，原路返回永宁门，由司机接上",
           "司机送至洒金桥美食街附近，晚餐期间等候，饭后直接送大家回酒店"
@@ -359,14 +359,14 @@ const STAGES = [
         "hotel_zh": "呈坎澍德堂",
         "transport_en": [
           "Around 08:00 · Pre-arranged vehicle leaves SFEEL for Hangzhou East Railway Station; allow time for luggage, security and boarding",
-          "Target train G1509 · Hangzhou East 09:33 → Huangshan North 11:01; provisional timetable, verify on 12306 once tickets go on sale. An arrival between 11:00 and 11:30 works best",
+          "High-speed train · Hangzhou East → Huangshan North; train number and time to be added after ticketing. An arrival between 11:00 and 11:30 works best",
           "Around 11:20 · Anhui tour operator meets the family at Huangshan North Station; approximately 25–35 minutes by car to Tunxi Old Street",
           "Around 13:30 · Leave Tunxi for Chengkan; allow approximately 45–60 minutes plus parking/check-in time",
           "If the train or lunch runs late, shorten the Old Street stroll first to protect the afternoon tea"
         ],
         "transport_zh": [
           "约08:00 · 预约车辆从SFEEL酒店出发前往杭州东站，预留行李、安检及进站时间",
-          "目标车次 G1509 · 杭州东09:33 → 黄山北11:01；目前仅作目标班次，待开售后以12306实际时刻为准；理想抵达窗口为11:00–11:30",
+          "高铁 · 杭州东 → 黄山北；车次与时间待出票后补充；理想抵达窗口为11:00–11:30",
           "约11:20 · 皖南旅行社在黄山北站接站；乘车约25–35分钟至屯溪老街",
           "约13:30 · 从屯溪老街出发前往呈坎；车程预计45–60分钟，另留停车和办理入住时间",
           "如车次或午餐延误，优先缩短老街散步时间，确保赶上下午茶"
@@ -510,13 +510,13 @@ const STAGES = [
         "activities_en": [
           "After arrival | Take a pre-arranged vehicle from Shanghai Hongqiao Station to the Zhongshan Park hotel.",
           "Evening | Walk along the Bund and enjoy the Pudong skyline and historic waterfront architecture.",
-          "Optional | Visit the Songmont shop at 149 Yuanmingyuan Road, in the Rockbund area.",
+          "If everyone still has energy | Take the short public ferry across the Huangpu River for a low-effort view of both waterfronts.",
           "Night | Return to the hotel by car."
         ],
         "activities_zh": [
           "抵沪后｜从上海虹桥站乘预约车辆前往中山公园酒店。",
           "傍晚｜外滩漫步，欣赏浦东天际线和万国建筑群。",
-          "可选｜前往外滩源圆明园路149号哈密大楼的山下有松门店试包。",
+          "如体力允许｜从外滩乘一次短程黄浦江轮渡，以轻松方式欣赏两岸风景。",
           "晚上｜乘车返回酒店。"
         ]
       },
@@ -611,26 +611,26 @@ const STAGES = [
         ],
         "food_en": [
           "Breakfast near the hotel",
-          "Around 12:00 · Xin Rong Ji family farewell lunch",
-          "Coffee along Huaihai Middle Road; a light evening meal"
+          "11:30 · Confirmed private-room family farewell lunch at Xin Rong Ji (One Michelin Star), West Nanjing Road",
+          "Coffee near Zhangyuan; a light evening meal"
         ],
         "food_zh": [
           "酒店附近早餐",
-          "约12:00 · 新荣记告别午餐",
-          "淮海中路咖啡；晚餐从简"
+          "11:30 · 已订新荣记南京西路店（米其林一星）包厢，家庭告别午餐",
+          "张园附近咖啡；晚餐从简"
         ],
         "activities_en": [
           "Morning | After breakfast, walk through Zhongshan Park and observe everyday neighborhood life.",
-          "Midday | Enjoy the family farewell lunch at Xin Rong Ji.",
-          "Afternoon | Explore cafés and shops along Huaihai Middle Road near Shaanxi South Road; Songmont’s flagship at 817–819 Huaihai Middle Road is a backup shopping stop.",
-          "Optional | Take a short drive to Wukang Mansion to see the historic streetscape.",
+          "11:30 | Enjoy the confirmed private-room family farewell lunch at Xin Rong Ji (One Michelin Star), 2F, Henderson 688 Plaza, 688 West Nanjing Road.",
+          "Afternoon | Walk through Zhangyuan’s restored shikumen lanes, then continue to the Suzhou Creek waterfront for an easy look at historic and contemporary Shanghai.",
+          "Optional | If the child and adults want an indoor stop, visit Shanghai Natural History Museum nearby; reserve tickets in advance.",
           "Late afternoon | Return to the hotel."
         ],
         "activities_zh": [
           "上午｜早餐后漫步中山公园，感受上海市民的日常生活。",
-          "中午｜新荣记家庭告别午餐。",
-          "下午｜淮海中路陕西南路附近散步、喝咖啡；如前几天未买到包，可前往山下有松旗舰店（淮海中路817–819号）。",
-          "可选｜乘车前往武康大楼，欣赏历史街景。",
+          "11:30｜已订新荣记南京西路店（米其林一星）包厢，地址为南京西路688号恒基688广场2楼。",
+          "下午｜步行游览张园修缮后的石库门里弄，随后前往苏州河畔，轻松感受上海的历史与新城市景观。",
+          "可选｜若大人与孩子都想安排室内活动，可提前预约附近的上海自然博物馆。",
           "傍晚｜返回酒店。"
         ]
       },
@@ -712,7 +712,7 @@ function render() {
   document.getElementById('practical-title').textContent=ed.practical;
   document.getElementById('practical-label').textContent=ed.stay;
   document.getElementById('principles').innerHTML=ed.principles.map((p,i)=>'<div class="principle"><span class="eyebrow">0'+(i+1)+'</span><br><strong>'+p[0]+'</strong><p>'+p[1]+'</p></div>').join('');
-  document.getElementById('practical-table').innerHTML=ed.hotels.map(p=>'<tr><td>'+p[0]+'</td><td>'+p[1]+'</td></tr>').join('');
+  document.getElementById('practical-table').innerHTML=ed.hotels.map(p=>'<tr><td>'+p[0]+'</td><td>'+p[1]+(p[2]?'<span class="stay-address">'+p[2]+'</span>':'')+'</td></tr>').join('');
   document.getElementById('cover-ornament').textContent = t('ornament');
   document.getElementById('cover-title').textContent = t('title');
   const titleZh = document.getElementById('cover-title-zh');
